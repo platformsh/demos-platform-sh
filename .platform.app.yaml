@@ -1,10 +1,19 @@
 name: demos
 type: php:7.2
+build:
+    flavor: none
+
+size: S
 
 web:
+    commands:
+        start: sleep infinity
     locations: 
         "/":
             root: "public"
-            passthru: "/index.php"
+            index: 
+                - "/index.php"
+            expires: 300s
+            scripts: false
 
 disk: 256
