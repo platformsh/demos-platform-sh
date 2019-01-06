@@ -12,7 +12,7 @@ web:
         "/":
             root: "public"
             index: 
-                - "/index.php"
+                - "index.html"
             expires: 300s
             scripts: false
 
