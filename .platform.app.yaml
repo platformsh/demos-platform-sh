@@ -4,7 +4,7 @@ type: php:7.2
 web:
     locations: 
         "/":
-            root: "public"
-            passthru: "/index.html"
+            root: "/"
+            passthru: "/index.php"
 
 disk: 256
