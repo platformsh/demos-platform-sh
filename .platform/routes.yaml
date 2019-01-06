@@ -2,7 +2,3 @@
     type: upstream
     upstream: "demos:http"
 
-"http://{default}/":
-    type: redirect
-    to: "https://{default}/"
-
