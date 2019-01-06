@@ -1,6 +1,6 @@
 "https://{default}/":
     type: upstream
-    upstream: "demos:php"
+    upstream: "demos:http"
 
 "http://{default}/":
     type: redirect
