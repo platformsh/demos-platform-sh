@@ -5,6 +5,9 @@ build:
 
 size: S
 
+dependencies:
+    nodejs: # Specify one NPM package per line.
+        reveal: '*'
 web:
     commands:
         start: sleep infinity
