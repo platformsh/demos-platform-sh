@@ -5,9 +5,10 @@ build:
 
 size: S
 
-dependencies:
-    nodejs: # Specify one NPM package per line.
-        reveal: '*'
+#dependencies:
+#    nodejs: # Specify one NPM package per line.
+#        reveal: '*'
+
 web:
     commands:
         start: sleep infinity
@@ -20,3 +21,8 @@ web:
             scripts: false
 
 disk: 256
+
+hooks:
+    build: |
+        wget https://github.com/hakimel/reveal.js/archive/3.7.0.tar.gz
+        tar zxvf 3.7.0.tar.gz    
