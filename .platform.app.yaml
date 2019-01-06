@@ -3,6 +3,5 @@ type: php:7.2
 
 web:
     document_root: "/"
-    passthru: "/index.html"
 
 disk: 256
