@@ -3,6 +3,6 @@ type: php:7.2
 
 web:
     document_root: "/"
-    passthrough: "/index.html"
+    passthru: "/index.html"
 
-
+disk: 256
