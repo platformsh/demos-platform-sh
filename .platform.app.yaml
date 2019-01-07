@@ -10,7 +10,7 @@ web:
         start: sleep infinity
     locations: 
         "/":
-            root: "app"
+            root: "web"
             index: 
                 - "index.html"
             expires: 300s
