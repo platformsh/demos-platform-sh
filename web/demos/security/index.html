@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Security</title>
+
+  <meta name="description" content="Demonstrations of Platform.sh capabilities">
+  <meta name="author" content="Platform.sh DevRel team">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SaaS Demo">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="../../reveal/css/reveal.css">
+  <link rel="stylesheet" href="../../reveal/css/theme/white.css" id="theme">
+
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">
+
+  <!-- Styles added by Platform.sh -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+
+  <style type="text/css">
+    /* Put presentation-specific CSS here. Yes, it will happen. */
+  </style>
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<!-- ontouchstart="" will enable :hover and :active events on tap gesture for PWAs -->
+<body ontouchstart=””>
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+      <h1>Security</h1>
+    </section>
+
+    <section>
+      <blockquote>I need to know exactly what happened on my site and when.</blockquote>
+    </section>
+
+    <section>
+      <img src="images/1-clone-branch.png" alt="Any user can clone a branch" />
+      <p>All changes to code happen through Git.</p>
+    </section>
+
+    <section>
+      <video preload="auto" class="stretch" controls data-autoplay>
+        <source src="images/2-break-something.mp4" />
+      </video>
+      <p>Sometimes users commit broken code. But if they do...</p>
+    </section>
+
+    <section>
+      <img src="images/3-git-log.png" alt="A git log of the branch" />
+      <p>There's no secret. It's right there in the Git log.</p>
+      <p>Who, When, and Where.</p>
+    </section>
+
+    <section>
+      <video preload="auto" class="stretch" controls data-autoplay>
+        <source src="images/4-cannot-edit-live.mp4" />
+      </video>
+      <p>The server is read-only. No one can "fix it live" and forget about it.</p>
+      <p>That also means even if a site is compromised, the code can't be.</p>
+    </section>
+
+    <section>
+      <img src="images/5-jorge-integration-branch.png" alt="Jorge has access to the integration branch" />
+      <p>But don't worry.</p>
+      <p>While this user can commit to the <code>integration</code> branch...</p>
+    </section>
+
+    <section>
+      <img src="images/6-jorge-no-master-branch.png" alt="Jorge does not have access to the master branch" />
+      <p>They can't merge it to <code>master</code> without a review.</p>
+      <p>No one likes broken code, even on Fridays.</p>
+    </section>
+
+    <section>
+      <img src="../../images/platform-logo-2c.svg" alt="That's Platform.sh." />
+    </section>
+
+    <div style="display:none">
+
+      I did a dumb on this one and took the pictures with the wrong user. It will need to get redone.
+      Good enough to show the outline for now.
+
+    Problem: "I need to know exactly what happened to the site's code, and when."
+    Script
+      Show UI, check out a branch locally.
+      Make a change to a file that is obviously wrong.
+      Git commit.
+      Overlay: "All changes go through Git, and git tracks changes."
+      Push, show build.
+      Crossfade: Another user checks out the branch.
+      Run git log.
+      Highlight (zoom, circle, something) the commit message and name.
+      Overlay: "There's the culprit..."
+      SSH into environment.
+      Open the same code file in an editor (nano, vim, etc.)
+      Make change, try to save.
+      Get read-only error from editor.
+      Overlay: All containers are read-only; they can't be hacked from the outside, and no live edits are possible without going through Git.
+      Overlay: Fortunately this was all on a branch, and Jim can't push to production anyway.
+      Show Jim pushing to master, getting Error.
+    Shows
+      Auditing
+      Build code on git push
+      Read only containers
+      Users with permissions
+    </div>
+
+  </div>
+
+</div>
+
+<script src="../../reveal/lib/js/head.min.js"></script>
+<script src="../../reveal/js/reveal.js"></script>
+
+<script>
+
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    width: 1194,
+    height: 671,
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal/plugin/search/search.js', async: true },
+      { src: 'reveal/plugin/zoom-js/zoom.js', async: true },
+      { src: 'reveal/plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
+</html>
