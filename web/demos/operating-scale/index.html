@@ -25,6 +25,8 @@
   <!-- Styles added by Platform.sh -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="../../style.css">
+  <!-- Asciinema -->
+  <link rel="stylesheet" type="text/css" href="../../asciinema/asciinema-player.css" />
 
   <style type="text/css">
     /* Put presentation-specific CSS here. Yes, it will happen. */
@@ -68,9 +70,48 @@
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
     <section>
-      <h1>Title here</h1>
-    </section>
+      <h1>How to manage dozens or hundreds of sites with Platform.sh</h1>
 
+    </section>
+	
+	<section>
+		<h3>Large fleets of sites pose large problems:</h3>
+		<ul>
+			<li>Provisioning</li>
+			<li>Updating</li>
+			<li>Access controll</li>						
+			<li>Support and problem resolution</li>
+		</ul>
+	</section>
+	
+	<section>
+		<h2>Provisioning - automate it</h2>
+		<p>Use the Platform.sh API to create instances of your product. This can enable self service or bulk site creation.</p>
+	</section>
+	
+	<section>
+		<h2>Updating - automate it</h2>
+		<p>Maintain your source code separately and push it out to your fleet of site by scripting our API. You decide what the workflow is. Updating into a new branch is supported, as is updating the live product.</p>
+	</section>
+	
+	<section>
+		<h3>Run commands on multiple projects using the CLI or API calls</h3>
+		<asciinema-player cols="120" rows="14" font-size="medium" autoplay="true" speed="1.5" src="cli-multi.cast"></asciinema-player>
+	</section>
+	
+	<section>
+		<h2>Access controll</h2>
+		<p>Adding users as admins, developers, readers, or customers to your product can be scripted and integrated with your authentication and authorisation solution.</p>
+	</section>
+		
+	<section>
+		<h2>Support and problem resolution</h2>
+		<p>We've got your back with 24/7 infrastructure support. Your helpdesk team can escalate relevant tickets to us directly via ticket sharing.</p>
+	</section>
+	
+	<section>
+		<p>Platform.sh provides a one-stop solution for web development and hosting.  If you're an organization that hosts dozens of sites or an agency that manages dozens of sites for a customer, you can benefit from going all-in on Platform.sh</p>
+	</section>
 
     <div style="display:none">
     Problem: I manage dozens or hundreds of different sites.
@@ -125,6 +166,6 @@
   });
 
 </script>
-
+<script src="../../asciinema/asciinema-player.js"></script>
 </body>
 </html>
