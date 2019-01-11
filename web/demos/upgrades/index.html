@@ -68,9 +68,50 @@
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
     <section>
-      <h1>Title here</h1>
+      <h1>Upgrade with ease</h1>
     </section>
 
+    <section>
+      <blockquote>Is my application compatible with that sweet new PHP 7.3?</blockquote>
+    </section>
+
+    <section>
+      <p>Let's find out!</p>
+    </section>
+
+    <section>
+      <img src="images/1-make-branch.png" alt="Create a branch on Platform.sh." />
+      <p>Create a new environment; code and all!</p>
+    </section>
+
+    <section>
+      <img src="images/2-clone-branch-ui.png" alt="Get the Git clone command from the UI" />
+      <p>You can clone the whole project using Git, or the Platform.sh CLI.</p>
+    </section>
+
+    <section>
+      <video preload="auto" class="stretch" controls data-autoplay>
+        <source src="images/3-edit-app-yaml.mp4" />
+      </video>
+      <p>Clone the project, edit <em>one character</em>.  And git push.</p>
+      <p>The entire environment is rebuilt from source, now on your new version.</p>
+    </section>
+
+    <section>
+      <img src="images/4-view-site-url.png" alt="Get the site URL from the UI" />
+      <p>Do whatever testing you need, automated or manual.</p>
+      <p>Production hasn't been touched.</p>
+    </section>
+
+    <section>
+      <img src="images/5-merge-branch.png" alt="Merge the branch through the UI." />
+      <p>You know it works. You've tested it.</p>
+      <p>Deploy the exact same configuration to prod in seconds.</p>
+    </section>
+
+    <section>
+      <img src="../../images/platform-logo-2c.svg" alt="That's Platform.sh." />
+    </section>
 
     <div style="display:none">
     Problem: Is my application compatible with the new PHP 7.3?
@@ -109,6 +150,8 @@
 
   // More info https://github.com/hakimel/reveal.js#configuration
   Reveal.initialize({
+    width: 1194,
+    height: 671,
     controls: true,
     progress: true,
     history: true,

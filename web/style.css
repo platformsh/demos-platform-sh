@@ -2,6 +2,26 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-img {
+.reveal section img {
     max-height: 100%;
+    border: none;
+}
+
+blockquote::before {
+    content: open-quote;
+}
+
+blockquote::after {
+    content: close-quote;
+}
+
+.reveal .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #3BA9E0;
+}
+
+.reveal .controls {
+    color: #3BA9E0;
 }
