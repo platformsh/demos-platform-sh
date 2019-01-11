@@ -25,3 +25,7 @@ blockquote::after {
 .reveal .controls {
     color: #3BA9E0;
 }
+
+.reveal section h1 {
+    text-transform: none;
+}
