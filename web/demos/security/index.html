@@ -28,6 +28,10 @@
 
   <!-- Asciinema -->
   <link rel="stylesheet" type="text/css" href="../../asciinema/asciinema-player.css" />
+  <script src="../../asciinema/asciinema-player.js"></script>
+
+  <!-- Custom Platform.sh scripts -->
+  <script src="../../asciinema-start.js"></script>
 
   <style type="text/css">
     /* Put presentation-specific CSS here. Yes, it will happen. */
@@ -173,18 +177,17 @@
 
     // More info https://github.com/hakimel/reveal.js#dependencies
     dependencies: [
-      { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: 'reveal/plugin/search/search.js', async: true },
-      { src: 'reveal/plugin/zoom-js/zoom.js', async: true },
-      { src: 'reveal/plugin/notes/notes.js', async: true }
+      { src: '../../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../../reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../../reveal/plugin/search/search.js', async: true },
+      { src: '../../reveal/plugin/zoom-js/zoom.js', async: true },
+      { src: '../../reveal/plugin/notes/notes.js', async: true }
     ]
   });
 
 </script>
-<script src="../../asciinema/asciinema-player.js"></script>
 
 </body>
 </html>
