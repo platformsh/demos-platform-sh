@@ -15,13 +15,6 @@ blockquote::after {
     content: close-quote;
 }
 
-.reveal .progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #3BA9E0;
-}
-
 .reveal .controls {
     color: #3BA9E0;
 }

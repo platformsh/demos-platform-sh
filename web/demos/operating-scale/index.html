@@ -18,48 +18,41 @@
   <link rel="stylesheet" href="../../reveal/css/reveal.css">
   <link rel="stylesheet" href="../../reveal/css/theme/white.css" id="theme">
 
-
   <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">
 
   <!-- Styles added by Platform.sh -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="../../style.css">
+
   <!-- Asciinema -->
   <link rel="stylesheet" type="text/css" href="../../asciinema/asciinema-player.css" />
+  <script src="../../asciinema/asciinema-player.js"></script>
+
+  <!-- Custom Platform.sh scripts -->
+  <script src="../../asciinema-start.js"></script>
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/manifest.json">
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
 
   <style type="text/css">
     /* Put presentation-specific CSS here. Yes, it will happen. */
   </style>
 
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-
-  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/manifest.json">
-  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
 </head>
 
 <!-- ontouchstart="" will enable :hover and :active events on tap gesture for PWAs -->
@@ -147,21 +140,25 @@
     width: 1194,
     height: 671,
     controls: true,
-    progress: true,
+    progress: false,
     history: true,
     center: true,
+    controlsTutorial: false,
+    touch: true,
+    overview: false,
+    help: false,
 
     transition: 'slide', // none/fade/slide/convex/concave/zoom
 
     // More info https://github.com/hakimel/reveal.js#dependencies
     dependencies: [
-      { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: 'reveal/plugin/search/search.js', async: true },
-      { src: 'reveal/plugin/zoom-js/zoom.js', async: true },
-      { src: 'reveal/plugin/notes/notes.js', async: true }
+      { src: '../../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../../reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../../reveal/plugin/search/search.js', async: true },
+      { src: '../../reveal/plugin/zoom-js/zoom.js', async: true },
+      { src: '../../reveal/plugin/notes/notes.js', async: true }
     ]
   });
 
