@@ -29,3 +29,22 @@ blockquote::after {
 .reveal section h1 {
     text-transform: none;
 }
+
+/* Squeeze in a bit more room. */
+.reveal section p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.reveal .slides section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*
+This is for debugging. It lets us see what the available screen real estate is.
+Remove this rule before we actually go to print.
+*/
+.slides {
+    background: #00af87;
+}
