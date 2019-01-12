@@ -1,3 +1,11 @@
+## General structure
+
+* Each demo lives in the `demos` directory in a unique directory of its own.
+* Each demo is a single index.html Reveal.js slideshow deck, plus an `assets` directory to hold images, videos, Asciinema scripts, etc.
+* Start a new slide deck by copying an existing index.html file from another deck.
+* Remember to update BOTH the <title> element in the header AND the <h1> tag on the first slide!
+
+
 ## Aciinema usage
 
 To use Asciinema with this slide deck, please be aware of the following.
