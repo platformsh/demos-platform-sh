@@ -8,7 +8,7 @@
     It also sets some reasonable defaults for all players.
      */
 
-    const defaultFontSize = 'medium';
+    const defaultFontSize = '18px';
 
     document.addEventListener('DOMContentLoaded', function() {
 
