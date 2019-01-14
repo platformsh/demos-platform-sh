@@ -38,6 +38,6 @@ blockquote::after {
 This is for debugging. It lets us see what the available screen real estate is.
 Remove this rule before we actually go to print.
 */
-.slides {
-    background: #00af87;
+.reveal .slides {
+    border: 1px dotted red;
 }
