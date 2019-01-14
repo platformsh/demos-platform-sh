@@ -51,6 +51,24 @@
 
   <style type="text/css">
     /* Put presentation-specific CSS here. Yes, it will happen. */
+
+    ul.logo-list {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    ul.logo-list > li {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    ul.logo-list > li > img {
+      width: 250px;
+    }
+
   </style>
 
 </head>
@@ -102,6 +120,17 @@
       <img src="assets/5-merge-branch.png" alt="Merge the branch through the UI." />
       <p>You know it works. You've tested it.</p>
       <p>Deploy the exact same configuration to prod in seconds.</p>
+    </section>
+
+    <section>
+      <ul class="logo-list">
+        <li><img src="assets/php-logo.svg" alt="PHP 7" data-credit="https://commons.wikimedia.org/wiki/File:PHP-logo.svg" /></li>
+        <li><img src="assets/python-logo.svg" alt="Python" data-credit="https://commons.wikimedia.org/wiki/File:Python.svg" /></li>
+        <li><img src="assets/nodejs-logo.svg" alt="NodeJs" data-credit="https://commons.wikimedia.org/wiki/File:Node.js_logo.svg" /></li>
+        <li><img src="assets/ruby-logo.svg" alt="Ruby" data-credit="https://commons.wikimedia.org/wiki/File:Ruby_logo.svg" /></li>
+        <li><img src="assets/golang-logo.svg" alt="Go" data-credit="https://www.vectorlogo.zone/logos/golang/index.html" /></li>
+      </ul>
+      <p>It works for any change, any language, any dependency.</p>
     </section>
 
     <section>
