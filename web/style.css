@@ -19,7 +19,7 @@ blockquote::after {
     color: #3BA9E0;
 }
 
-.reveal section h1 {
+.reveal section h1, .reveal section h2, .reveal section h3 {
     text-transform: none;
 }
 
