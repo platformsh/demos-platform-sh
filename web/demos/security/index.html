@@ -51,6 +51,35 @@
 
   <style type="text/css">
     /* Put presentation-specific CSS here. Yes, it will happen. */
+
+    div.grid-2x3 {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 5px;
+      grid-row-gap: 50px;
+    }
+
+    div.security-point {
+      display: grid;
+      background: transparent url(assets/security-shield.svg) no-repeat;
+      background-position-x: 10px;
+      align-items: start;
+      grid-template-rows: 26pt;
+      background-size: 40pt;
+      grid-gap: 5px;
+      margin: 5px;
+    }
+
+    div.security-point > h3 {
+      font-size: 22pt;
+      text-align: right;
+      margin-right: 10px;
+    }
+
+    div.security-point > p {
+      font-size: 18pt;
+    }
   </style>
 
 </head>
@@ -67,13 +96,7 @@
     </section>
 
     <section>
-      <blockquote>I need to know exactly what happened on my site and when.</blockquote>
-    </section>
-
-    <section>
-      <asciinema-player src="assets/size20x104.cast"></asciinema-player>
-      <p>Size test, 104x20.</p>
-      <p>Another line</p>
+      <blockquote>I need to know and verify that my site is secure.</blockquote>
     </section>
 
     <section>
@@ -108,6 +131,52 @@
       <img src="assets/6-jorge-no-master-branch.png" alt="Jorge does not have access to the master branch" />
       <p>They can't merge it to <code>master</code> without a review.</p>
       <p>No one likes broken code, even on Fridays.</p>
+    </section>
+
+    <section>
+      <h2>Security is on us.</h2>
+      <h3>You pick the major version;<br />we handle security updates</h3>
+      <ul>
+        <li>Operating System</li>
+        <li>System software</li>
+        <li>Services</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Secure-by-design architecture</h2>
+      <div class="grid-2x3">
+        <div class="security-point">
+          <!--<img src="assets/security-shield.svg" alt="" />-->
+          <h3>Hardened services</h3>
+          <p>We run hardened Linux Kernels, and all deployed packages come from internal signed repositories.</p>
+        </div>
+        <div class="security-point">
+          <!--<img src="assets/security-shield.svg" alt="" />-->
+          <h3>Rootless operations</h3>
+          <p>Operations are fully automated. All operations are logged.</p>
+        </div>
+        <div class="security-point">
+          <!--<img src="assets/security-shield.svg" alt="" />-->
+          <h3>Restrictive firewall</h3>
+          <p>Only HTTP/S and SSH are allowed in. Services run in full network isolation.</p>
+        </div>
+        <div class="security-point">
+          <!--<img src="assets/security-shield.svg" alt="" />-->
+          <h3>Restricted access</h3>
+          <p>SSH access is controlled per-environment. All users are unprivileged.</p>
+        </div>
+        <div class="security-point">
+          <!--<img src="assets/security-shield.svg" alt="" />-->
+          <h3>2FA available</h3>
+          <p>Any login to the dashboard can be enforced through a second authentication method.</p>
+        </div>
+        <div class="security-point">
+          <!--<img src="assets/security-shield.svg" alt="" />-->
+          <h3>TLS everywhere</h3>
+          <p>Free TLS certificates included in every project, or bring your own.</p>
+        </div>
+      </div>
     </section>
 
     <section>
