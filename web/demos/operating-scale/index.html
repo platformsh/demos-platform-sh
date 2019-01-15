@@ -51,6 +51,12 @@
 
   <style type="text/css">
     /* Put presentation-specific CSS here. Yes, it will happen. */
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
   </style>
 
 </head>
@@ -63,48 +69,61 @@
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
     <section>
-      <h1>How to manage dozens or hundreds of sites with Platform.sh</h1>
-
+      <h1>Managing dozens or hundreds of sites with Platform.sh</h1>
     </section>
-	
-	<section>
-		<h3>Large fleets of sites pose large problems:</h3>
-		<ul>
-			<li>Provisioning</li>
-			<li>Updating</li>
-			<li>Access controll</li>						
-			<li>Support and problem resolution</li>
-		</ul>
-	</section>
-	
-	<section>
-		<h2>Provisioning - automate it</h2>
-		<p>Use the Platform.sh API to create instances of your product. This can enable self service or bulk site creation.</p>
-	</section>
-	
-	<section>
-		<h2>Updating - automate it</h2>
-		<p>Maintain your source code separately and push it out to your fleet of site by scripting our API. You decide what the workflow is. Updating into a new branch is supported, as is updating the live product.</p>
-	</section>
-	
-	<section>
-		<h3>Run commands on multiple projects using the CLI or API calls</h3>
-		<asciinema-player src="assets/cli-multi.cast"></asciinema-player>
-	</section>
-	
-	<section>
-		<h2>Access controll</h2>
-		<p>Adding users as admins, developers, readers, or customers to your product can be scripted and integrated with your authentication and authorisation solution.</p>
-	</section>
-		
-	<section>
-		<h2>Support and problem resolution</h2>
-		<p>We've got your back with 24/7 infrastructure support. Your helpdesk team can escalate relevant tickets to us directly via ticket sharing.</p>
-	</section>
-	
-	<section>
-		<p>Platform.sh provides a one-stop solution for web development and hosting.  If you're an organization that hosts dozens of sites or an agency that manages dozens of sites for a customer, you can benefit from going all-in on Platform.sh</p>
-	</section>
+
+    <section>
+      <blockquote>I have 300 sites to manage.  Help!</blockquote>
+    </section>
+
+    <section>
+      <h3>Large fleets pose large problems</h3>
+      <ul>
+        <li>Provisioning</li>
+        <li>Updating</li>
+        <li>Access control</li>
+        <li>Support and problem resolution</li>
+      </ul>
+    </section>
+
+    <section>
+      <p style="font-style: italic;">Provisioning - automate it</p>
+      <asciinema-player src="assets/1-create-project.cast"></asciinema-player>
+      <p>Our API is fully scriptable.</p>
+    </section>
+
+    <section>
+      <p style="font-style: italic; margin-bottom: 1em;">Updating - automate it</p>
+      <p>Manage your source code and push it out via Git and scripts.</p>
+      <p>You decide what the workflow is.</p>
+      <p>Update into a testing branch or straight to prod, your choice.</p>
+    </section>
+
+    <section>
+      <p style="font-style: italic;">Access control - automate it</p>
+      <asciinema-player src="assets/2-multi-add-users.cast"></asciinema-player>
+      <p>Run commands on multiple projects using the CLI or API calls</p>
+    </section>
+
+    <section>
+      <h2>Support and problem resolution</h2>
+      <div class="two-col">
+        <div><img src="assets/3-create-ticket.png" width="350px" alt="Create tickets using ZenDesk" /></div>
+        <ul>
+          <li>We've got your back with 24/7 infrastructure support.</li>
+          <li>Your helpdesk team can escalate relevant tickets to us directly via ticket sharing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <p>Platform.sh is a one-stop solution for web hosting.</p>
+      <p>The more sites you need to manage, the greater the benefit of our fully automatable solution.</p>
+    </section>
+
+    <section>
+      <img src="../../images/platform-logo-2c.svg" align="That's Platform.sh." />
+    </section>
 
     <div style="display:none">
     Problem: I manage dozens or hundreds of different sites.
@@ -163,6 +182,6 @@
   });
 
 </script>
-<script src="../../asciinema/asciinema-player.js"></script>
+
 </body>
 </html>
