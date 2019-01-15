@@ -1,5 +1,11 @@
-body {
-    font-family: 'Open Sans', sans-serif;
+body,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .reveal section img {
@@ -23,6 +29,10 @@ blockquote::after {
     text-transform: none;
 }
 
+.reveal .slide-background-content {
+  background-size: contain;
+}
+
 /* Squeeze in a bit more room. */
 .reveal section p {
     margin-top: 8px;
@@ -32,6 +42,8 @@ blockquote::after {
 .reveal .slides section {
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 56px;
+    padding-right: 56px;
 }
 
 /*
