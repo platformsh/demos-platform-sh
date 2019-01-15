@@ -47,6 +47,10 @@ blockquote::after {
     box-sizing: border-box;
 }
 
+.reveal blockquote {
+    width: 80%;
+}
+
 /*
 This is for debugging. It lets us see what the available screen real estate is.
 Remove this rule before we actually go to print.

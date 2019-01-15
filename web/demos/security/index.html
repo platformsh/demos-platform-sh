@@ -117,8 +117,8 @@
 
     <section>
       <asciinema-player src="assets/4-cannot-edit-live.cast"></asciinema-player>
-      <p>The server is read-only. No one can "fix it live" and forget about it.</p>
-      <p>That also means even if a site is compromised, the code can't be.</p>
+      <p>The server is read-only. No one can "fix it live" and forget it.</p>
+      <p>That means even if a site is compromised, the code can't be.</p>
     </section>
 
     <section>
@@ -147,32 +147,26 @@
       <h2>Secure-by-design architecture</h2>
       <div class="grid-2x3">
         <div class="security-point">
-          <!--<img src="assets/security-shield.svg" alt="" />-->
           <h3>Hardened services</h3>
           <p>We run hardened Linux Kernels, and all deployed packages come from internal signed repositories.</p>
         </div>
         <div class="security-point">
-          <!--<img src="assets/security-shield.svg" alt="" />-->
-          <h3>Rootless operations</h3>
+          <h3>No-root operation</h3>
           <p>Operations are fully automated. All operations are logged.</p>
         </div>
         <div class="security-point">
-          <!--<img src="assets/security-shield.svg" alt="" />-->
           <h3>Restrictive firewall</h3>
           <p>Only HTTP/S and SSH are allowed in. Services run in full network isolation.</p>
         </div>
         <div class="security-point">
-          <!--<img src="assets/security-shield.svg" alt="" />-->
           <h3>Restricted access</h3>
           <p>SSH access is controlled per-environment. All users are unprivileged.</p>
         </div>
         <div class="security-point">
-          <!--<img src="assets/security-shield.svg" alt="" />-->
           <h3>2FA available</h3>
           <p>Any login to the dashboard can be enforced through a second authentication method.</p>
         </div>
         <div class="security-point">
-          <!--<img src="assets/security-shield.svg" alt="" />-->
           <h3>TLS everywhere</h3>
           <p>Free TLS certificates included in every project, or bring your own.</p>
         </div>
