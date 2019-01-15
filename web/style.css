@@ -51,6 +51,12 @@ blockquote::after {
     width: 80%;
 }
 
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
 /*
 This is for debugging. It lets us see what the available screen real estate is.
 Remove this rule before we actually go to print.
