@@ -42,8 +42,8 @@ blockquote::after {
 .reveal .slides section {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 56px;
-    padding-right: 56px;
+    padding-left: 45px;
+    padding-right: 45px;
     box-sizing: border-box;
 }
 
