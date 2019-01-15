@@ -44,6 +44,7 @@ blockquote::after {
     padding-bottom: 10px;
     padding-left: 56px;
     padding-right: 56px;
+    box-sizing: border-box;
 }
 
 /*
