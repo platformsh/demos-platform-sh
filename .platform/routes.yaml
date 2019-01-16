@@ -1,4 +1,37 @@
-"https://{default}/":
-    type: upstream
-    upstream: "demos:http"
-
+https://{default}/:
+  type: upstream
+  upstream: demos:http
+http://demos.platform.sh/:
+  primary: null
+  id: null
+  attributes: {}
+  type: redirect
+  redirects:
+    expires: -1s
+    paths: {}
+  tls:
+    strict_transport_security:
+      enabled: null
+      include_subdomains: null
+      preload: null
+    min_version: null
+    client_authentication: null
+    client_certificate_authorities: []
+  to: https://demos.platform.sh
+http://{default}/:
+  primary: null
+  id: null
+  attributes: {}
+  type: redirect
+  redirects:
+    expires: -1s
+    paths: {}
+  tls:
+    strict_transport_security:
+      enabled: null
+      include_subdomains: null
+      preload: null
+    min_version: null
+    client_authentication: null
+    client_certificate_authorities: []
+  to: https://{default}
