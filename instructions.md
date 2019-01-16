@@ -1,4 +1,9 @@
 ## General structure
+```
+npm install -g reveal-md
+cd web
+reveal-md demos/fast-scale/index.md --template=template/default.html```
+`
 
 * Each demo lives in the `demos` directory in a unique directory of its own.
 * Each demo is a single index.html Reveal.js slideshow deck, plus an `assets` directory to hold images, videos, Asciinema scripts, etc.
