@@ -67,38 +67,53 @@
     <section>
       <h1>Try new technologies and architectures</h1>
     </section>
-
+	
     <section>
-      <blockquote>We have a huge sale tomorrow. Traffic is going to skyrocket!</blockquote>
+      <blockquote>I wonder if Elasticsearch would work better than Solr?</blockquote>
     </section>
-
+	
+<!--
     <section>
       <img src="assets/1-user-menu.png" alt="Go to the user menu in the top right of the screen." class="screenshot" />
       <p>That's easy. Just go to your user page...</p>
     </section>
+-->
+	
     <section>
-      <img src="assets/2-select-project.png" alt="Select your project and click Edit." class="screenshot" />
-      <p>... Edit the project</p>
+       <img scr="" alt="Use the UI to make a new elasticsearch branch">
+       <p>To test a new technology, start by making a new branch.</p>
     </section>
+	
     <section>
-      <img src="assets/3-set-plan.png" alt="Pick your plan size." class="screenshot" />
-      <p>... And pick a new plan size. Scale as high as you need.</p>
+		<asciicinema>Edit two files...</asciicinema>
+		<p>On the new branch, edit two YAML files to make ElasticSearch available to your app.</p>
     </section>
+	
     <section>
-      <img src="assets/4-redeploy.png" height="425px" alt="When you save, the site redeploys automatically at the new size." class="screenshot" />
-      <p>The site will redeploy in seconds.</p>
-      <p>5x the memory and CPU are now yours!</p>
+		<asciicinema>Edit one files...</asciicinema>
+        <p>You may need requirements for your stack, such as Ruby gems, PIP packages, Composer libraries, or NPM stuff. You can specify that in YAML as well.</p>
     </section>
+	
     <section>
-      <img src="assets/5-set-plan-down.png" alt="Scale back down at any time." class="screenshot" />
-      <p>You can scale back down to any plan size anytime.</p>
-      <p>Plans are prorated. Pay for only the time you use!</p>
+		
+      <p>Deploy the new service by pushing your code to the new branch.</p>
+	</section>
+		
+    <section>
+	  <asciicinema>platform service:list, connect to Elastic...</asciicinema>
+      <p>You can connect to the new ElasticSearch service using the CLI tool to test it.</p>
     </section>
 
     <section>
-      <asciinema-player src="assets/6-cli-scale.cast"></asciinema-player>
-      <p>You can scale from the command line, too.</p>
-      <p>Including from your own scripts.</p>
+      <p>Share the new environment with others with the URL.</p>
+    </section>
+	
+	<section>
+      <p>When you've tested and want to take your new technology live, just merge into Master and the application deploys with the new ElasticSearch service.</p>
+	</section>
+	
+    <section>
+      <p>Since the infrastructure and its configuration is stored in Git alongside the code, you can roll back the infrastructure changes the same way you revert an unwanted change made to the code. Just git revert.</p>
     </section>
 
     <section>
@@ -108,24 +123,6 @@
 	<section>
 		<a href="/">Back home!</a>
 	</section>	
-
-    <div style="display:none">
-      Problem: "Woah, we have a big news announcement tomorrow.  Will the site handle it?"
-      Script
-        Show UI.
-        Go to Accounts, select project config.
-        Change size from Standard to Large, hit save.
-        *site redeploys*
-        Overlay: "Five times as much CPU and RAM, at the click of a button."
-        Overlay: "Well, our traffic is back down now that the news has passed."
-        Change site from Large to Medium, hit save. (Because there's still some residual extra traffic.)
-        *site redeploys*
-      Shows
-        Easy scaling
-        Scale for events
-        Cost control
-
-    </div>
 
   </div>
 
