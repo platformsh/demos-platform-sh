@@ -20,4 +20,13 @@ disk: 256
 
 hooks:
     build: |
+        curl -sS https://platform.sh/cli/installer | php
         set -e
+
+crons:
+    snapshot:
+        spec: '0 2 * * 0'
+        cmd: |
+            if [ "$PLATFORM_BRANCH" = master ]; then
+                platform snapshot:create --yes --no-wait
+            fi
