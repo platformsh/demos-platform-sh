@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Try new technologies and architectures</title>
+  <title>Mixing technologies</title>
 
 
   <meta name="description" content="Demonstrations of Platform.sh capabilities">
@@ -65,62 +65,9 @@
   <div class="slides">
 
     <section>
-      <h1>Try new technologies and architectures</h1>
-    </section>
-	
-    <section>
-      <blockquote>I wonder if Elasticsearch would work better than Solr?</blockquote>
-    </section>
-	
-<!--
-    <section>
-      <img src="assets/1-user-menu.png" alt="Go to the user menu in the top right of the screen." class="screenshot" />
-      <p>That's easy. Just go to your user page...</p>
-    </section>
--->
-	
-    <section>
-       <img scr="" alt="Use the UI to make a new elasticsearch branch">
-       <p>To test a new technology, start by making a new branch.</p>
-    </section>
-	
-    <section>
-		<asciicinema>services.yaml</asciicinema>
-		<p>On the new branch, add the ElasticSearch service to your services.yaml file.</p>
-    </section>
-			
-	<section>
-		<asciicinema>Edit relationshipss...</asciicinema>
-		<p>"Relationships" in the .platform.app.yaml file tell your app how to communicate with the new ElasticSearch service, and they will work on every new branch you make.</p>
-	</section>
-	
-    <section>
-		<asciicinema>Edit one files...</asciicinema>
-        <p>You may need requirements for your stack, such as Ruby gems, PIP packages, Composer libraries, or NPM stuff. You can specify that in YAML as well.</p>
-    </section>
-	
-    <section>
-	  <asciicinema>Deploy...</asciicinema>
-      <p>Deploy the new service by pushing your code to the new branch.</p>
-	</section>
-		
-    <section>
-	  <asciicinema>platform service:list, connect to Elastic...</asciicinema>
-      <p>You can connect to the new ElasticSearch service using the CLI tool to test it.</p>
+      <h1>Mixing technologies</h1>
     </section>
 
-    <section>
-      <p>Share the new environment with others with the URL.</p>
-    </section>
-	
-	<section>
-	  <img src="assets/x-merge.png" alt="Merge into master to deploy" class="screenshot"/>
-      <p>When you've tested and want to take your new technology live, just merge into Master and the application deploys with the new ElasticSearch service.</p>
-	</section>
-	
-    <section>
-      <p>Since the infrastructure and its configuration is stored in Git alongside the code, you can roll back the infrastructure changes the same way you revert an unwanted change made to the code. Just git revert.</p>
-    </section>
 
     <section>
       <img src="../../images/platform-logo-2c.svg" alt="That's Platform.sh." />
@@ -129,6 +76,24 @@
 	<section>
 		<a href="/">Back home!</a>
 	</section>	
+
+    <div style="display:none">
+      Problem: "Woah, we have a big news announcement tomorrow.  Will the site handle it?"
+      Script
+        Show UI.
+        Go to Accounts, select project config.
+        Change size from Standard to Large, hit save.
+        *site redeploys*
+        Overlay: "Five times as much CPU and RAM, at the click of a button."
+        Overlay: "Well, our traffic is back down now that the news has passed."
+        Change site from Large to Medium, hit save. (Because there's still some residual extra traffic.)
+        *site redeploys*
+      Shows
+        Easy scaling
+        Scale for events
+        Cost control
+
+    </div>
 
   </div>
 
