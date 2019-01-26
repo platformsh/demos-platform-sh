@@ -68,6 +68,82 @@
       <h1>Dev vs Prod</h1>
     </section>
 
+<!--
+    <section>
+      <img src="assets/1-user-menu.png" alt="Go to the user menu in the top right of the screen." class="screenshot" />
+      <p>That's easy. Just go to your user page...</p>
+    </section>
+	
+	
+    <section>
+        <video width="100%" data-autoplay>
+          <source src="assets/4-new-branches.mp4" type="video/mp4">
+        </video>
+		<p>Jorge can now enable the rest of his team to work on the web-agency-team branch, and any new branches he makes.</p>
+	</section>	
+	
+-->
+	
+    <section>
+      <blockquote>I want my Dev, Test and Stage environments to be identical to Production... but not too identical!</blockquote>
+    </section>	
+
+
+    <section>
+		<p>Dev, Test, Stage, and any other enviroment should match Production as closely as possible.</p>
+	</section>
+	
+    <section>
+		<p>But they should have their own:
+			<ul>
+				<li>Settings</li>
+				<li>Services (e.g. Database)</li>
+				<li>Domains</li>
+				<li>API keys</li>
+			</ul>
+	</section>	
+	
+	<section>
+		<p>And, unless you're doing load testing, they should be on smaller containers to save resources.</p>
+	</section>
+	
+    <section>
+      <img src="assets/01-code-same.png" alt="Code should be the same." class="screenshot" />
+    </section>
+	
+    <section>
+      <img src="assets/02-services-same.png" alt="Services should be the same." class="screenshot" />
+    </section>
+	
+    <section>
+      <img src="assets/03-data-same.png" alt="Data should be the same." class="screenshot" />
+    </section>
+	
+    <section>
+      <img src="assets/04-uniques.png" alt="URLs etc should be unique" class="screenshot" />
+    </section>
+	
+	<section>
+		<p>Environmental variables get added to each new environment. Use these for things like API keys that differentiate between Production and non-Production environments.</p>
+	</section>
+	
+    <section>
+        <video width="100%" data-autoplay>
+          <source src="assets/05-variables.mp4" type="video/mp4">
+        </video>
+		<p>Master has a Production payment gateway key. All other environments inherit the Sandbox key.</p>
+	</section>	
+		
+    <section>
+        <video width="100%" data-autoplay>
+          <source src="assets/06-new-envs.mp4" type="video/mp4">
+        </video>
+		<p>New environments inherit variables so they are created ready-to-go. Developers don't need to worry about using correct settings.</p>
+	</section>	
+	
+    <section>
+      <p>All non-production environments are minimally sized to be cost effective. Larger sizes are available if your app needs extra resource.</p>
+    </section>	
 
     <section>
       <img src="../../images/platform-logo-2c.svg" alt="That's Platform.sh." />
@@ -77,23 +153,7 @@
 		<a href="/">Back home!</a>
 	</section>	
 
-    <div style="display:none">
-      Problem: "Woah, we have a big news announcement tomorrow.  Will the site handle it?"
-      Script
-        Show UI.
-        Go to Accounts, select project config.
-        Change size from Standard to Large, hit save.
-        *site redeploys*
-        Overlay: "Five times as much CPU and RAM, at the click of a button."
-        Overlay: "Well, our traffic is back down now that the news has passed."
-        Change site from Large to Medium, hit save. (Because there's still some residual extra traffic.)
-        *site redeploys*
-      Shows
-        Easy scaling
-        Scale for events
-        Cost control
 
-    </div>
 
   </div>
 
