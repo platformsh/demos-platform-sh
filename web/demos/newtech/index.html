@@ -80,23 +80,23 @@
 -->
 	
     <section>
-       <img scr="" alt="Use the UI to make a new elasticsearch branch">
+       <img src="assets/01-elasticsearch-branch.png" alt="Use the UI to make a new elasticsearch branch" class="screenshot">
        <p>To test a new technology, start by making a new branch.</p>
     </section>
 	
     <section>
-		<asciicinema>services.yaml</asciicinema>
+      <asciinema-player src="assets/02-services.cast"></asciinema-player>
 		<p>On the new branch, add the ElasticSearch service to your services.yaml file.</p>
     </section>
 			
 	<section>
-		<asciicinema>Edit relationshipss...</asciicinema>
+        <asciinema-player src="assets/03-app-yaml.cast"></asciinema-player>
 		<p>"Relationships" in the .platform.app.yaml file tell your app how to communicate with the new ElasticSearch service, and they will work on every new branch you make.</p>
 	</section>
 	
     <section>
-		<asciicinema>Edit one files...</asciicinema>
-        <p>You may need requirements for your stack, such as Ruby gems, PIP packages, Composer libraries, or NPM stuff. You can specify that in YAML as well.</p>
+       <img src="assets/04-dependencies.png" alt="dependencies" class="screenshot">
+        <p>You may need build-time dependencies for your stack, such as Ruby gems, PIP packages, Composer libraries, or NPM stuff. You can specify that in YAML as well.</p>
     </section>
 	
     <section>

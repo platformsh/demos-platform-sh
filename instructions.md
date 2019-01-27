@@ -13,7 +13,7 @@ To use Asciinema with this slide deck, please be aware of the following.
 When recording:
 
 * Your terminal window MUST be set to exactly 104 columns and 20 rows. It won't size properly otherwise.
-* You MUST use the command `asciinema rec -i-2`.  That will automatically trim out any "dead time" longer than 2 seconds, and set the player to do the same by default.
+* You MUST use the command `asciinema rec -i=2`.  That will automatically trim out any "dead time" longer than 2 seconds, and set the player to do the same by default.
 
 Before using the cast script, the following changes MUST be made:
 
