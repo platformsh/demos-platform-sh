@@ -30,3 +30,7 @@ crons:
             if [ "$PLATFORM_BRANCH" = master ]; then
                 platform snapshot:create --yes --no-wait
             fi
+
+
+relationships:
+    elasticsearch: "mysearch:elasticsearch"

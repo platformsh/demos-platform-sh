@@ -1,1 +1,5 @@
 # no services
+
+mysearch:
+    type: elasticsearch:5.4
+    disk: 1024
