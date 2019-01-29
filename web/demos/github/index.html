@@ -78,20 +78,18 @@
 	</section>	
 
     <div style="display:none">
-      Problem: "Woah, we have a big news announcement tomorrow.  Will the site handle it?"
+      Problem: I want to have all my code changes automatically deployed to a staging environment
       Script
-        Show UI.
-        Go to Accounts, select project config.
-        Change size from Standard to Large, hit save.
-        *site redeploys*
-        Overlay: "Five times as much CPU and RAM, at the click of a button."
-        Overlay: "Well, our traffic is back down now that the news has passed."
-        Change site from Large to Medium, hit save. (Because there's still some residual extra traffic.)
-        *site redeploys*
+        Overlay: Integrations with Git hosts like GitHub mean every branch can have its own staging environment and every code change can be automatically deployed
+        Show typing into terminal `platform integration:add --type=github --project=my-platform-project --token=abcdef12345 --repository=example/my-web-project`
+        Overlay: Push a new commit to your branch and it will be automatically deployed.
+        Show entering command `git commit -a -m “Test new version”`, followed by `git push -u origin my-branch`
+        Show UI. Zoom in on envs list, showing `my-branch`, and show the “Test new version” commit being built
       Shows
-        Easy scaling
-        Scale for events
-        Cost control
+        Continuous delivery
+        Build code on git push
+        Integrate with GitHub/GitLab
+
 
     </div>
 

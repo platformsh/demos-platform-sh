@@ -77,20 +77,24 @@
 	</section>	
 
     <div style="display:none">
-      Problem: "Woah, we have a big news announcement tomorrow.  Will the site handle it?"
+      Problem: My monolith is getting too big to handle.
       Script
-        Show UI.
-        Go to Accounts, select project config.
-        Change size from Standard to Large, hit save.
-        *site redeploys*
-        Overlay: "Five times as much CPU and RAM, at the click of a button."
-        Overlay: "Well, our traffic is back down now that the news has passed."
-        Change site from Large to Medium, hit save. (Because there's still some residual extra traffic.)
-        *site redeploys*
+        Overlay: Most successful microservice systems start as monoliths, then get broken up as they grow.
+        Show: Command line, check out project, make new branch.
+        Overlay: Fortunately, splitting up a project is easy.
+        Show: `mv` all files to a subdirectory, including .platform.app.yaml.
+        Show: Add a new directory, put a .platform.app.yaml file in it.  Copy in some files (or something?)
+        Overlay: Platform.sh supports multiple applications in a single project and Git repository. Split off whatever you need, whenever you need.
+        Show: Add RabbitMQ to services.yaml
+        Show: Git commit, git push.
+        Overlay: And when your split-architecture is ready, just merge back to production. It's that simple.
       Shows
-        Easy scaling
-        Scale for events
-        Cost control
+        Transition to microservices
+        Experiment with new Architectures
+        RabbitMQ
+        Build code on git push
+        YAML-based configuration
+
 
     </div>
 
