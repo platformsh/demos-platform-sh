@@ -52,6 +52,23 @@
 
   <style type="text/css">
     /* Put presentation-specific CSS here. Yes, it will happen. */
+
+    ul.logo-list {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    ul.logo-list > li {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    ul.logo-list > li > img {
+      width: 250px;
+    }
   </style>
 
 </head>
@@ -66,6 +83,62 @@
 
     <section>
       <h1>Microservices</h1>
+    </section>
+
+    <section>
+      <blockquote>My monolith application is getting too big to handle.</blockquote>
+    </section>
+
+    <section>
+      <p>Most successful microservice systems start as monoliths, then get broken up as they grow.</p>
+    </section>
+
+    <section>
+      <p>Fortunately, splitting up a project is easy.</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/1-reorg-project.cast"></asciinema-player>
+      <p>1 - Move your existing application to a subdirectory</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/2-new-app.cast"></asciinema-player>
+      <p>2 - Add your new application in its own directory</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/3-rabbitmq.cast"></asciinema-player>
+      <p>3 - Optionally add services to coordinate your applications</p>
+      <p>They can also talk to each other directly; your choice!</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/4-worker.cast"></asciinema-player>
+      <p>4 - Applications can also spawn worker containers</p>
+      <p>The same application, but a different run configuration</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/5-deploy.cast"></asciinema-player>
+      <p>5 - <code>git push</code>; we'll take it from there</p>
+    </section>
+
+    <section>
+      <img src="assets/6-topology.png" alt="The UI now shows the new services" />
+      <p>Your new applications and services are deployed!</p>
+      <p>When ready, just merge to <code>master</code></p>
+    </section>
+
+    <section>
+      <ul class="logo-list">
+        <li><img src="assets/php-logo.svg" alt="PHP 7" data-credit="https://commons.wikimedia.org/wiki/File:PHP-logo.svg" /></li>
+        <li><img src="assets/python-logo.svg" alt="Python" data-credit="https://commons.wikimedia.org/wiki/File:Python.svg" /></li>
+        <li><img src="assets/nodejs-logo.svg" alt="NodeJs" data-credit="https://commons.wikimedia.org/wiki/File:Node.js_logo.svg" /></li>
+        <li><img src="assets/ruby-logo.svg" alt="Ruby" data-credit="https://commons.wikimedia.org/wiki/File:Ruby_logo.svg" /></li>
+        <li><img src="assets/golang-logo.svg" alt="Go" data-credit="https://www.vectorlogo.zone/logos/golang/index.html" /></li>
+      </ul>
+      <p>Mix and match any supported language as you please.</p>
     </section>
 
     <section>
