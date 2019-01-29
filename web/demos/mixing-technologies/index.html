@@ -78,20 +78,26 @@
 	</section>	
 
     <div style="display:none">
-      Problem: "Woah, we have a big news announcement tomorrow.  Will the site handle it?"
+      Problem: My developers want to split our app into different languages
       Script
-        Show UI.
-        Go to Accounts, select project config.
-        Change size from Standard to Large, hit save.
-        *site redeploys*
-        Overlay: "Five times as much CPU and RAM, at the click of a button."
-        Overlay: "Well, our traffic is back down now that the news has passed."
-        Change site from Large to Medium, hit save. (Because there's still some residual extra traffic.)
-        *site redeploys*
+        Overlay: Platform.sh supports 5 different languages, and multiple applications per project.
+        Check out a project.
+        Show file tree (probably a graphic rather than screenshot)
+        Show two application folders, different .platform.app.yaml files.
+        Show both .platform.app.yaml files, 2-up.  One is running Ruby, the other Go.
+        Overlay: Define as many applications as you need. Each one becomes its own application container with its own runtime, in any supported language!
+        Show build of the application.  Highlight Bundler output and Go modules output.
+        Overlay: Each application builds separately, with its own build dependencies.
+        Show routes.yaml.  It has two subdomains routes, pointing to different applications.
+        Overlay: Map incoming requests to either application, however you need.
+        Show the Ruby .platform.app.yaml again. Show cron and workers sections.
+        Overlay: Applications can also have a "worker" version for background tasks. Because it's in its own container, those tasks do not impact site performance!
       Shows
-        Easy scaling
-        Scale for events
-        Cost control
+        Multi-language support
+        Golang support
+        Automatically resolve dependencies
+        YAML-based configuration
+        Worker and cron support
 
     </div>
 
