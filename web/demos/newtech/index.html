@@ -69,7 +69,7 @@
     </section>
 	
     <section>
-      <blockquote>I'd like to test ElasticSearch with my app.'</blockquote>
+      <blockquote>I'd like to test Elasticsearch with my app.'</blockquote>
     </section>
 	
 <!--
@@ -86,53 +86,53 @@
 	
     <section>
       <asciinema-player src="assets/02-services.cast"></asciinema-player>
-		<p>On the new branch, add the ElasticSearch service to your services.yaml file.</p>
+		  <p>On the new branch, add the Elasticsearch service to your <code>services.yaml</code> file.</p>
     </section>
-			
-	<section>
-        <asciinema-player src="assets/03-app-yaml.cast"></asciinema-player>
-		<p><code>relationships</code> in the <code>.platform.app.yaml</code> file tell your app how to communicate with the new ElasticSearch service, and they will work on every new branch you make.</p>
-	</section>
-	
+
+    <section>
+      <asciinema-player src="assets/03-app-yaml.cast"></asciinema-player>
+      <p>The <code>relationships</code> in the <code>.platform.app.yaml</code> file give your app access to the new Elasticsearch service.</p>
+    </section>
+
     <section>
       <p>Deploy these changes using <code>git push</code>.</p>
-    </section>	
-	
-	<section>
-        <asciinema-player src="assets/04-tunnel.cast"></asciinema-player>
-		<p>Connect to the new ElasticSearch service by opening a tunnel from <code>mycomputer</code> to the ES server in the cloud.</p>
-	</section>
-	
-	<section>
-        <asciinema-player src="assets/05-curl.cast"></asciinema-player>
-		<p>Send a requeset to the ES server in the cloud using the local tunnel. It works!</p>
-	</section>	
-
-	<section>
-        <asciinema-player src="assets/06-relationships.cast"></asciinema-player>
-		<p>Your app will use the connection details in <code>PLATFORM_RELATIONSHIPS</code> to connect to the ES service.</p>
-	</section>	
+    </section>
 
     <section>
-	  <img src="assets/07-share.gif" alt="Share the new environment by copying the URL" class="screenshot">
+      <asciinema-player src="assets/04-tunnel.cast"></asciinema-player>
+      <p>Connect to the new Elasticsearch service by opening a tunnel from <code>mycomputer</code> to the ES server in the cloud.</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/05-curl.cast"></asciinema-player>
+      <p>Send a requeset to the ES server in the cloud using the local tunnel. It works!</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/06-relationships.cast"></asciinema-player>
+      <p>Your app will use the connection details in <code>PLATFORM_RELATIONSHIPS</code> to connect to the ES service.</p>
+    </section>
+
+    <section>
+      <img src="assets/07-share.gif" alt="Share the new environment by copying the URL" class="screenshot">
       <p>Share the new environment with others with the URL.</p>
     </section>
-	
-	<section>
-      <p>When you've tested and want to take your new technology live, just merge into Master and the application deploys with the new ElasticSearch service.</p>
-	</section>
-	
+
     <section>
-      <p>Since the infrastructure and its configuration is stored in Git alongside the code, you can roll back the infrastructure changes the same way you revert an unwanted change made to the code. Just git revert.</p>
+      <p>When you're ready to go live, just merge into <code>master</code> and the application deploys with the new Elasticsearch service.</p>
+    </section>
+
+    <section>
+      <p>Infrastructure is code.  If you want to go back, just `git revert` as you would for any other code.</p>
     </section>
 
     <section>
       <img src="../../images/platform-logo-2c.svg" alt="That's Platform.sh." />
     </section>
 
-	<section>
-		<a href="/">Back home!</a>
-	</section>	
+    <section>
+      <a href="/">Back home!</a>
+    </section>
 
   </div>
 
