@@ -392,6 +392,8 @@ section#final p.button {
 This is for debugging. It lets us see what the available screen real estate is.
 Remove this rule before we actually go to print.
 */
+/*
 .reveal .slides {
     border: 1px dotted red;
 }
+*/

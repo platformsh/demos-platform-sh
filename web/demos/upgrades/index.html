@@ -15,15 +15,12 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+  <!-- Theme definition. The order here matters. -->
   <link rel="stylesheet" href="../../reveal/css/reveal.css">
-  <link rel="stylesheet" href="../../reveal/css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../../theme.css" id="theme">
 
   <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">
-
-  <!-- Styles added by Platform.sh -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="../../style.css">
 
   <!-- Asciinema -->
   <link rel="stylesheet" type="text/css" href="../../asciinema/asciinema-player.css" />
@@ -31,7 +28,6 @@
 
   <!-- Custom Platform.sh scripts -->
   <script src="../../asciinema-start.js"></script>
-
 
   <link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-icon-60x60.png">
@@ -80,7 +76,8 @@
 
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
-    <section>
+
+    <section id="title-slide" data-background-color="#4786ff">
       <h1>Upgrade with ease</h1>
     </section>
 
@@ -127,22 +124,23 @@
 
     <section>
       <ul class="logo-list">
-        <li><img src="assets/php-logo.svg" alt="PHP 7" data-credit="https://commons.wikimedia.org/wiki/File:PHP-logo.svg" /></li>
-        <li><img src="assets/python-logo.svg" alt="Python" data-credit="https://commons.wikimedia.org/wiki/File:Python.svg" /></li>
-        <li><img src="assets/nodejs-logo.svg" alt="NodeJs" data-credit="https://commons.wikimedia.org/wiki/File:Node.js_logo.svg" /></li>
-        <li><img src="assets/ruby-logo.svg" alt="Ruby" data-credit="https://commons.wikimedia.org/wiki/File:Ruby_logo.svg" /></li>
-        <li><img src="assets/golang-logo.svg" alt="Go" data-credit="https://www.vectorlogo.zone/logos/golang/index.html" /></li>
+        <li><img src="assets/php-logo.svg" alt="PHP 7" class="plain" data-credit="https://commons.wikimedia.org/wiki/File:PHP-logo.svg" /></li>
+        <li><img src="assets/python-logo.svg" alt="Python" class="plain" data-credit="https://commons.wikimedia.org/wiki/File:Python.svg" /></li>
+        <li><img src="assets/nodejs-logo.svg" alt="NodeJs" class="plain" data-credit="https://commons.wikimedia.org/wiki/File:Node.js_logo.svg" /></li>
+        <li><img src="assets/ruby-logo.svg" alt="Ruby" class="plain" data-credit="https://commons.wikimedia.org/wiki/File:Ruby_logo.svg" /></li>
+        <li><img src="assets/golang-logo.svg" alt="Go" class="plain" data-credit="https://www.vectorlogo.zone/logos/golang/index.html" /></li>
       </ul>
       <p>It works for any change, any language, any dependency.</p>
     </section>
 
-    <section>
-      <img src="../../images/platform-logo-2c.svg" alt="That's Platform.sh." />
+    <section id="final" data-background="../../images/launch-background.png">
+      <div class="two-col">
+        <a href="/">
+          <div><img src="../../images/platform-logo-1c-black.svg" alt="That's Platform.sh" class="plain" /></div>
+          <p class="button">View all topics</p>
+        </a>
+      </div>
     </section>
-
-	<section>
-		<a href="/">Back home!</a>
-	</section>	
 
     <div style="display:none">
     Problem: Is my application compatible with the new PHP 7.3?
