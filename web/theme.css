@@ -26,9 +26,9 @@ body {
 
 .reveal {
     font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 42px;
+    font-size: 30px;
     font-weight: normal;
-    color: #222;
+    color: #1a192b;
 }
 
 ::selection {
@@ -69,18 +69,24 @@ body {
 }
 
 .reveal h1 {
-  font-size: 2.5em; }
+    font-size: 53pt;
+    font-weight: bold;
+    color: white;
+}
 
 .reveal h2 {
-    font-size: 1.6em;
+    font-size: 45pt;
+    font-weight: bold;
 }
 
 .reveal h3 {
-    font-size: 1.3em;
+    font-size: 25pt;
+    font-weight: bold;
 }
 
 .reveal h4 {
-    font-size: 1em;
+    font-size: 23pt;
+    font-weight: bold;
 }
 
 .reveal h1 {
@@ -158,9 +164,11 @@ body {
     width: 80%;
     margin: 20px auto;
     padding: 5px;
-    font-style: italic;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    /*font-style: italic;*/
+    font-size: 45pt;
+    /*font-weight: bold;*/
+    /*background: rgba(255, 255, 255, 0.05);*/
+    /*box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);*/
 }
 
 .reveal blockquote p:first-child,
