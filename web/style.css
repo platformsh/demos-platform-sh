@@ -7,7 +7,7 @@ blockquote::after {
 }
 
 .reveal .slide-background-content {
-  background-size: contain;
+    background-size: contain;
 }
 
 .reveal .slides section {
@@ -22,6 +22,28 @@ blockquote::after {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+}
+
+/*
+This is to style the final slide.  It's a bit gunky but it works.
+I am actually kind of amazed that the background image targeting works.
+*/
+
+section#final > div.two-col a {
+    padding: 0 100px;
+}
+
+section#final p.button {
+    background: #4786ff;
+    border-radius: 5px;
+    color: white;
+    padding: 4px;
+}
+
+.reveal .slide-background-content[style='background-image: url("../../images/launch-background.png");'] {
+    background-size: contain;
+    background-position: right;
+    background-attachment: fixed;
 }
 
 /*
