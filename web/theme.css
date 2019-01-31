@@ -294,6 +294,7 @@ body {
 .reveal section img.plain {
     border: 0;
     box-shadow: none;
+    background: transparent;
 }
 
 .reveal a img {
@@ -303,9 +304,9 @@ body {
 }
 
 .reveal a:hover img {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #2a76dd;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+    /*background: rgba(255, 255, 255, 0.2);*/
+    /*border-color: #2a76dd;*/
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);*/
 }
 
 /*********************************************
