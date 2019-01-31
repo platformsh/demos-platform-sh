@@ -40,7 +40,7 @@ section#final p.button {
     padding: 4px;
 }
 
-.reveal .slide-background-content[style='background-image: url("../../images/launch-background.png");'] {
+.reveal .slide-background-content[style*='images/launch-background.png"'] {
     background-size: contain;
     background-position: right;
     background-attachment: fixed;
