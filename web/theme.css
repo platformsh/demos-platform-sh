@@ -49,6 +49,14 @@ body {
     font-weight: inherit;
 }
 
+.reveal .slides section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
 /*********************************************
  * HEADERS
  *********************************************/
@@ -174,6 +182,14 @@ body {
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
     display: inline-block;
+}
+
+.reveal blockquote::before {
+    content: open-quote;
+}
+
+.reveal blockquote::after {
+    content: close-quote;
 }
 
 .reveal q {
@@ -337,4 +353,36 @@ body {
   .backgrounds {
     background-color: #fff;
   }
+}
+
+/*********************************************
+ * Portable layouts
+ *********************************************/
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/*********************************************
+ * Final slide layout.
+ * This is a bit gunky but works, amazingly.
+ *********************************************/
+
+section#final > div.two-col a {
+    padding: 0 100px;
+}
+
+section#final p.button {
+    background: #4786ff;
+    border-radius: 5px;
+    color: white;
+    padding: 4px;
+}
+
+.reveal .slide-background-content[style*='images/launch-background.png"'] {
+    background-size: contain;
+    background-position: right;
+    background-attachment: fixed;
 }
