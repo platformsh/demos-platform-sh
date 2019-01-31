@@ -4,7 +4,8 @@
  * Very closely based on the "White" theme bundled with Reveal.js.
  */
 
-@import url(reveal/lib/font/source-sans-pro/source-sans-pro.css);
+/* Import out main font here, so the HTML files don't have to. */
+@import url(opensans/opensans.css);
 
 section.has-dark-background,
 section.has-dark-background h1,
@@ -385,4 +386,12 @@ section#final p.button {
     background-size: contain;
     background-position: right;
     background-attachment: fixed;
+}
+
+/*
+This is for debugging. It lets us see what the available screen real estate is.
+Remove this rule before we actually go to print.
+*/
+.reveal .slides {
+    border: 1px dotted red;
 }
