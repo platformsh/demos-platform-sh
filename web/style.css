@@ -1,17 +1,3 @@
-body,
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-  font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.reveal section img {
-    max-height: 100%;
-    border: none;
-}
 
 blockquote::before {
     content: open-quote;
@@ -21,22 +7,8 @@ blockquote::after {
     content: close-quote;
 }
 
-.reveal .controls {
-    color: #3BA9E0;
-}
-
-.reveal section h1, .reveal section h2, .reveal section h3 {
-    text-transform: none;
-}
-
 .reveal .slide-background-content {
   background-size: contain;
-}
-
-/* Squeeze in a bit more room. */
-.reveal section p {
-    margin-top: 8px;
-    margin-bottom: 8px;
 }
 
 .reveal .slides section {
@@ -45,10 +17,6 @@ blockquote::after {
     padding-left: 45px;
     padding-right: 45px;
     box-sizing: border-box;
-}
-
-.reveal blockquote {
-    width: 80%;
 }
 
 .two-col {
