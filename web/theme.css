@@ -220,6 +220,7 @@ body {
     font-family: monospace;
     text-transform: none;
     background-color: #eeede4;
+    border-radius: 5px;
 }
 
 .reveal pre code {
