@@ -367,6 +367,14 @@ body {
 }
 
 /*********************************************
+ * Background handling
+ *********************************************/
+
+.reveal .slide-background-content {
+    background-size: contain;
+}
+
+/*********************************************
  * Final slide layout.
  * This is a bit gunky but works, amazingly.
  *********************************************/
