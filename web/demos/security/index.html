@@ -54,27 +54,21 @@
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 5px;
       grid-row-gap: 50px;
-    }
-
-    div.security-point {
-      display: grid;
-      background: transparent url(assets/security-shield.svg) no-repeat;
-      background-position-x: 10px;
-      align-items: start;
-      grid-template-rows: 26pt;
-      background-size: 40pt;
-      grid-gap: 5px;
-      margin: 5px;
+      grid-column-gap: 62px;
     }
 
     div.security-point > h3 {
       font-size: 22pt;
-      text-align: right;
-      margin-right: 10px;
+      text-align: left;
+      padding-top: 60px;
+      background: transparent url(assets/security-shield.svg) no-repeat;
+      background-size: 40pt;
+      background-position-x: center;
     }
 
     div.security-point > p {
-      font-size: 18pt;
+      font-size: 16pt;
+      text-align: left;
     }
   </style>
 
@@ -87,6 +81,7 @@
 
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
+
     <section id="title-slide" data-background-color="#4786ff">
       <h1>Security</h1>
     </section>
