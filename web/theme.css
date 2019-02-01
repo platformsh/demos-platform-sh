@@ -21,7 +21,6 @@ section.has-dark-background h6 {
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #fff;
   background-color: #fff;
 }
 
@@ -86,10 +85,13 @@ body {
 .reveal h2 {
     font-size: 45pt;
     font-weight: bold;
+    text-align: left;
+    padding-bottom: 65px;
+    margin-bottom: 0;
 }
 
 .reveal h3 {
-    font-size: 25pt;
+    font-size: 36pt;
     font-weight: bold;
 }
 
@@ -167,6 +169,11 @@ body {
     margin-left: 40px;
 }
 
+.reveal li {
+    font-size: 30px;
+    padding-bottom: 1em;
+}
+
 .reveal blockquote {
     display: block;
     position: relative;
@@ -213,6 +220,8 @@ body {
 .reveal code {
     font-family: monospace;
     text-transform: none;
+    background-color: #eeede4;
+    border-radius: 5px;
 }
 
 .reveal pre code {
@@ -364,6 +373,18 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+}
+
+.two-col.top-align {
+    align-items: start;
+}
+
+/*********************************************
+ * Background handling
+ *********************************************/
+
+.reveal .slide-background-content {
+    background-size: contain;
 }
 
 /*********************************************
