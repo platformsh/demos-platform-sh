@@ -213,6 +213,7 @@ body {
 .reveal code {
     font-family: monospace;
     text-transform: none;
+    background-color: #eeede4;
 }
 
 .reveal pre code {
