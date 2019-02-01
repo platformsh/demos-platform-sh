@@ -66,24 +66,24 @@
 
     <section>
       <blockquote>I want my Dev, Test and Stage environments to be identical to Production... but not too identical!</blockquote>
-    </section>	
+    </section>
 
     <section>
-		<p>Dev, Test, Stage, and any other environment should match Production as closely as possible.</p>
-	</section>
-	
-    <section>
-		<p>But they should have their own:
-			<ul>
-				<li>Settings</li>
-				<li>Services (e.g. Database)</li>
-				<li>Domains</li>
-				<li>API keys</li>
-			</ul>
-	</section>
+      <p>Dev, Test, Stage, and any other environment should match Production as closely as possible.</p>
+    </section>
 
     <section>
-      <p>And, unless you're doing load testing, they should be on smaller containers to save resources.</p>
+      <p>But they should have their own:
+      <ul style="margin-top: 2em;">
+        <li>Settings</li>
+        <li>Services (e.g. Database)</li>
+        <li>Domains</li>
+        <li>API keys</li>
+      </ul>
+    </section>
+
+    <section>
+      <p>Unless you're doing load testing,<br />they should be on smaller containers to save resources.</p>
     </section>
 
     <section>
@@ -103,23 +103,27 @@
     </section>
 
     <section>
-      <p>Environmental variables get added to each new environment. Use these for things like API keys that differ between Production and non-Production environments.</p>
+      <p>Environment variables get added to each new environment.</p>
+      <p style="margin-top: 2em;">Use these for things like API keys that differ between<br />Production and non-Production environments.</p>
     </section>
 
     <section>
-      <video height="60%" data-autoplay>
+      <video height="500px" data-autoplay muted playsinline>
         <source src="assets/05-variables.mp4" type="video/mp4">
       </video>
-      <p>Master has a Production payment gateway key. All other environments inherit the Sandbox key.</p>
+      <p>Master has a Production payment gateway key.</p>
+      <p>All other environments inherit the Sandbox key.</p>
     </section>
 
     <section>
       <asciinema-player src="assets/06-new-env.cast"></asciinema-player>		
-      <p>New environments inherit variables when created. Developers don't need to worry about using correct settings.</p>
+      <p>New environments inherit variables when created.</p>
+      <p>Developers don't need to worry about using correct settings.</p>
     </section>
 
     <section>
-      <p>All non-production environments are minimally sized to be cost effective. Larger sizes are available if your app needs extra resources.</p>
+      <p>Non-production environments are scaled down to save costs.</p>
+      <p style="margin-top: 2em;">Larger sizes are available if your app needs extra resources.</p>
     </section>
 
     <section id="final" data-background="../../images/launch-background.png">
