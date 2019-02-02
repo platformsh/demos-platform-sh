@@ -1,0 +1,82 @@
+{
+    "presentations": [
+        {
+            "demoSlug": "platform-overview",
+            "gridTitle": "Platform.sh Overview",
+            "fullTitle": "",
+            "imageSlug": "connected"
+        },
+        {
+            "demoSlug": "saas",
+            "gridTitle": "Running SaaS",
+            "fullTitle": "Run your SaaS on Platform.sh",
+            "imageSlug": "gears"
+        },
+        {
+            "demoSlug": "control-costs",
+            "gridTitle": "Controlling Costs",
+            "fullTitle": "Control costs",
+            "imageSlug": "money"
+        },
+        {
+            "demoSlug": "fast-scale",
+            "gridTitle": "Scaling Quickly On-demand",
+            "fullTitle": "Scale quickly on-demand",
+            "imageSlug": "containers"
+        },
+        {
+            "demoSlug": "team-scale",
+            "gridTitle": "Easily Adding Team Members",
+            "fullTitle": "Add new team members",
+            "imageSlug": "users"
+        },
+        {
+            "demoSlug": "operating-scale",
+            "gridTitle": "Operating at Scale",
+            "fullTitle": "",
+            "imageSlug": "automated"
+        },
+        {
+            "demoSlug": "newtech",
+            "gridTitle": "Trying New Technologies",
+            "fullTitle": "Try new technologies and architectures",
+            "imageSlug": "infrastructure"
+        },
+        {
+            "demoSlug": "upgrades",
+            "gridTitle": "Easy Version Upgrades",
+            "fullTitle": "",
+            "imageSlug": "tools"
+        },
+        {
+            "demoSlug": "security",
+            "gridTitle": "Security by Design",
+            "fullTitle": "",
+            "imageSlug": "security"
+        },
+        {
+            "demoSlug": "scrum",
+            "gridTitle": "Scrum Management",
+            "fullTitle": "",
+            "imageSlug": "time"
+        },
+        {
+            "demoSlug": "dev-prod",
+            "gridTitle": "Development Environments",
+            "fullTitle": "",
+            "imageSlug": "environments"
+        },
+        {
+            "demoSlug": "microservices",
+            "gridTitle": "Building Microservices",
+            "fullTitle": "",
+            "imageSlug": "routing"
+        },
+        {
+            "demoSlug": "github",
+            "gridTitle": "Git Integrations",
+            "fullTitle": "Integrate with GitHub, BitBucket, or GitLab",
+            "imageSlug": "git"
+        }
+    ]
+}
