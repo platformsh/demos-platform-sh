@@ -25,12 +25,6 @@
             "imageSlug": "containers"
         },
         {
-            "demoSlug": "team-scale",
-            "gridTitle": "Easily Adding Team Members",
-            "fullTitle": "Add new team members",
-            "imageSlug": "users"
-        },
-        {
             "demoSlug": "operating-scale",
             "gridTitle": "Operating at Scale",
             "fullTitle": "",
