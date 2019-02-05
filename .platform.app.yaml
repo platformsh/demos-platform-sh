@@ -8,10 +8,16 @@ size: S
 web:
     commands:
         start: sleep infinity
-    locations: 
+    locations:
+        "/.well-known":
+            root: "web/.well-known"
+            rules:
+                "apple-app-site-association":
+                    headers:
+                        Content-Type: application/json
         "/":
             root: "web"
-            index: 
+            index:
                 - "index.html"
             expires: 300s
             scripts: false
