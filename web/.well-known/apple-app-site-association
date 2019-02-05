@@ -1,7 +1,9 @@
 {
-   "applinks": {
-      "apps": [
-         "A2XS4K55WQ.sh.pltfrm.devrel.ValueMapApp"
-      ]
+    "applinks": {
+        "apps": [],
+        "details": [{
+            "appID": "A2XS4K55WQ.sh.pltfrm.devrel.ValueMapApp",
+            "paths": ["*"]
+        }]
     }
 }
