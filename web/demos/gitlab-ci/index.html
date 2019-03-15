@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>CI made dead simple</title>
+
+    <meta name="description" content="Getting started with Gitlab CI and Platform.sh">
+    <meta name="author" content="Branislav Bujisic">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section data-background="img/icon_big.png">
+                <h1>CI made dead simple with Drupal 8, GitLab and Platform.sh</h1>
+                <p>Branislav Bujisic<br><span class="s">@bbujisic</span></p>
+            </section>
+
+            <!-- Intro -->
+            <section>
+                <section>
+                    <h2>Hi</h2>
+                </section>
+                <section>
+                    <p>Branislav Bujisic, <span style="font-size: .75em">product engineer</span></p>
+                    <p><img class="plain" src="img/psh-dark@4x.png" style="width: 300px"></p>
+                </section>
+                <section>
+                    <h3>Family guy</h3>
+                    <img class="plain" src="img/love.png" style="width: 300px"><img class="plain" src="img/cat.png" style="width: 300px">
+                </section>
+                <section>
+                    <h3>Bad accent included</h3>
+                    <img class="plain" src="img/love-diversity.png" style="max-width: 300px">
+                    <aside class="notes">Love diversity</aside>
+                </section>
+            </section>
+
+
+            <!-- Kudos -->
+            <section>
+                <p>https://www.youtube.com/watch?v=_-_x7eApZKU</p>
+                <img src="img/noops-levi-nick.png">
+            </section>
+
+
+            <!-- The simple example of code sniffer -->
+            <section>
+                <section>
+                    <h2>PHP Codesniffer</h2>
+                    <p>Setup:</p>
+                    <pre><code class="sh">
+    composer global require drupal/coder
+    export PATH=”$PATH:$HOME/.composer/vendor/bin”
+                        </code></pre>
+                    <p>Usage:</p>
+                    <pre><code class="sh">phpcs --standard=Drupal modules/custom</code></pre>
+                </section>
+
+                <section>
+                    <p>Results:</p>
+                    <pre class="xs">-----------------------------------------------------------------------------------------------------------------------
+FOUND 13 ERRORS AND 3 WARNINGS AFFECTING 16 LINES
+-----------------------------------------------------------------------------------------------------------------------
+   5 | WARNING | [x] Unused use statement
+   7 | WARNING | [x] Unused use statement
+   9 | ERROR   | [x] Missing class doc comment
+  13 | ERROR   | [x] Missing function doc comment
+  33 | ERROR   | [x] You must use "/**" style comments for a function comment
+  35 | ERROR   | [x] Data types in @var tags need to be fully namespaced
+  44 | WARNING | [ ] Line exceeds 80 characters; contains 91 characters
+  45 | ERROR   | [ ] Doc comment short description must be on a single line, further text should be a separate paragraph
+  78 | ERROR   | [ ] Doc comment short description must be on a single line, further text should be a separate paragraph
+  92 | ERROR   | [ ] Missing short description in doc comment
+  93 | ERROR   | [x] Data types in @param tags need to be fully namespaced
+  98 | ERROR   | [x] You must use "/**" style comments for a function comment
+ 118 | ERROR   | [ ] Missing short description in doc comment
+ 125 | ERROR   | [x] You must use "/**" style comments for a function comment
+ 139 | ERROR   | [x] Expected 1 blank line after function; 0 found
+ 140 | ERROR   | [x] The closing brace for the class must have an empty line before it
+ -----------------------------------------------------------------------------------------------------------------------
+ PHPCBF CAN FIX THE 11 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+ -----------------------------------------------------------------------------------------------------------------------
+
+Time: 2.38 secs; Memory: 10MB</pre>
+                </section>
+
+                <section>
+                    <h2>When are you doing it?</h2>
+                    <ol>
+                        <li>Before each commit?</li>
+                        <li>Before each push?</li>
+                        <li>Before each merge request?</li>
+                        <li>When you remember to do it?</li>
+                        <li>Never?</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>If you automated your testing, you are doing it right.</h2>
+                    <p>...because, honestly, do you even want to waste your code review time on trivialities such as coding standards.</p>
+                </section>
+            </section>
+
+
+            <!-- Quality through testing as a goal -->
+            <section>
+                <section>
+                    <h2><b>The goal:</b>
+                        <br>ensure quailty of software, through frequent and comprehensive testing, while maintaining high productivity</h2>
+                </section>
+                <section>
+                    <h3>Quality control</h3>
+                    <ul>
+                        <li><b>Coding standards</b><br><span class="m">we all want to push to d.o.</span></li>
+                        <li><b>Unit tests</b><br><span class="m">cover individual componets, smallest possible things to test</span></li>
+                        <li><b>Integration tests</b><br><span class="m">cover the interaction between components</span></li>
+                        <li><b>Acceptance tests</b><br><span class="m">evaluate the compliance with the business requirements</span></li>
+                        <li><b>E2E tests</b><br><span class="m">cover the entire flow of an app, from the start to the end</span></li>
+                    </ul>
+                    <aside class="notes">Integration tests are like unit tests, just <b>without mocking</b>.</aside>
+                </section>
+                <section>
+                    <h3>What can be automated?</h3>
+                    <img class="plain" src="img/testing-pyramid.png">
+                </section>
+                <section>
+                    <h3>Good quality control</h3>
+                    <p><b>Continuous Integration</b> allows you to integrate the code into a shared repository and build and test each change automatically, as early as possible, usually several times a day.</p>
+                    <p class="source">Source: <a href="https://about.gitlab.com/product/continuous-integration">https://about.gitlab.com/product/continuous-integration</a></p>
+                </section>
+                <section>
+                    <h3>Even better quality control</h3>
+                    <p><b>Continuous Delivery</b> ensures that the software can be released to production at any time, often by automatically pushing changes to a staging system.</p>
+                    <p class="source">Source: <a href="https://about.gitlab.com/product/continuous-integration">https://about.gitlab.com/product/continuous-integration</a></p>
+                </section>
+                <section>
+                    <h3>Quality control that you really trust</h3>
+                    <p><b>Continuous Deployment</b> takes the process a step further and pushes changes to the production automatically.</p>
+                    <p class="source">Source: <a href="https://about.gitlab.com/product/continuous-integration">https://about.gitlab.com/product/continuous-integration</a></p>
+                </section>
+                <section>
+                    <h2>The pipeline</h2>
+                    <img src="img/cicd_pipeline_infograph.png">
+                    <p class="source">Source: <a href="https://about.gitlab.com/product/continuous-integration">https://about.gitlab.com/product/continuous-integration</a></p>
+                    <aside class="notes">The goal is not to solve, the problem of testing, but to provide developers the tools to do it.</aside>
+                </section>
+            </section>
+
+
+            <!-- Code review toolset -->
+            <section>
+                <section>
+                    <h2>Code review tools are logical candidate to run CI/CD pipelines</h2>
+                </section>
+                <section>
+                    <h3>Lots of tools</h3>
+                    <img class="plain logo" src="img/bitbucket.svg"><img class="plain logo" src="img/github.png"><img class="plain logo" src="img/gitlab.png">
+                    <small class="fragment">...or you can try Gerrit if you feel masochistic</small>
+                </section>
+                <section>
+                    <h3><img class="plain xs" src="img/gitlab.png"> Gitlab</h3>
+                    <ul>
+                        <li>CE - open source (MIT License)</li>
+                        <li>SaaS or self-hosted</li>
+                        <li>Merge requests</li>
+                        <li>Built-in CI/CD</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2><img class="plain xs" src="img/gitlab.png"> Setting up Gitlab</h2>
+                    <p>Ubuntu 18.04, 2 cores, 8GB RAM</p>
+                    </ul>
+                    <pre><code style="bash">curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+sudo bash script.deb.sh
+sudo apt install gitlab-ce</code></pre>
+                    <pre><code style="rb"># /etc/gitlab/gitlab.rb
+external_url 'https://example.com'
+letsencrypt['contact_emails'] = ['admin@example.com']</code></pre>
+                    <pre><code class="sh">sudo gitlab-ctl reconfigure</code></pre>
+                    <p class="source">Source: <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-18-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-18-04</a></p>
+                </section>
+                <section>
+                    <h2><img class="plain xs" src="img/gitlab.png"> Gitlab runners</h2>
+                    <ul>
+                        <li>An isolated machine (a VM, a VPS, a bare-metal machine, a docker container, or a cluster of containers).</li>
+                        <li>Picks up jobs from the coordinator API of GitLab and runs them.</li>
+                        <li>Ideally, it should not run on the same server as GitLab.</li>
+                    </ul>
+                    <img class="plain" src="img/runners.svg">
+                    </p>
+                    <p class="source">Source: <a href="https://docs.gitlab.com/runner/">https://docs.gitlab.com/runner/</a></p>
+                </section>
+                <section>
+                    <h2><img class="plain xs" src="img/gitlab.png"> Setting up a GitLab runner</h2>
+                    <pre><code class="bash">curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+sudo apt-get install gitlab-runner</code></pre>
+                    <pre><code class="bash">sudo gitlab-runner register</code></pre>
+                    <table class="s">
+                        <tr>
+                            <th>Source</th>
+                            <td>https://example.com</td>
+                        </tr>
+                        <tr>
+                            <th>Token</th>
+                            <td>[the-token-obtained-from-gitlab]</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>My Fancy Runner</td>
+                        </tr>
+                        <tr>
+                            <th>Tags</th>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <th>Executor</th>
+                            <td>docker</td>
+                        </tr>
+                        <tr>
+                            <th>Default Docker image</th>
+                            <td>bbujisic/drupal8-phpunit:1.0</td>
+                        </tr>
+                    </table>
+                    <p class="source">Sources:<br><a href="https://docs.gitlab.com/runner/install/linux-repository.html">https://docs.gitlab.com/runner/install/linux-repository.html</a><br><a href="https://docs.gitlab.com/runner/register/index.html">https://docs.gitlab.com/runner/register/index.html</a></p>
+                </section>
+                <section>
+                    <h2><img class="plain xs" src="img/docker-image-reference.png">Docker image</h2>
+                    <pre><code>docker pull bbujisic/drupal8-phpunit:1.0</code></pre>
+                    <ul>
+                        <li>PHP 7.2, composer, Drush</li>
+                        <li>PHPCS, Drupal Coder, PHPLint</li>
+                        <li>PHP Unit</li>
+                        <li>Open source</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>The recipe</h2>
+                    <code>.gitlab-ci.yml</code>
+                </section>
+
+                <section>
+                    <img class="plain fragment" src="img/ci-flow--first-step.svg">
+                    <pre><code class="yaml">image: bbujisic/drupal8-phpunit:1.0
+
+stages:
+  - test
+
+phpcs:
+  stage: test
+  script:
+    - phpcs --standard=Drupal web/modules/custom web/themes/custom</code></pre>
+                    <aside class="notes">
+                        This particular pipeline, although dead simple, solves a big problem it runs the thing we all wanted to do, but it was a too big bother.
+                    </aside>
+                </section>
+                <section>
+                    <img class="plain" src="img/ci-flow--second-step.png">
+                    <pre><code class="yaml">
+phpunit:
+  stage: test
+  script:
+    - composer install
+    - phpunit web/modules/custom
+                </code></pre>
+                </section>
+                <section>
+                    <pre><code class="yaml">#.gitlab-ci.yml
+image: bbujisic/drupal8-phpunit:1.0
+stages:
+  - test
+   
+phpcs:
+  stage: test
+  script:
+    - phpcs --standard=Drupal web/modules/custom web/themes/custom
+phpunit:
+  stage: test
+  script:
+    - composer install
+    - phpunit web/modules/custom</code></pre>
+                </section>
+                <section>
+                    <h3>PHPUnit can solve the unit and integration testing</h3>
+                    <img class="plain" src="img/unit-and-integation-tests.png">
+                    <aside class="notes">
+                        <p>The above setup gets you covered. Unit tests are efficient, easy to implement, simply good.</p>
+                        <p>However, for the integration and acceptance tests, you will a working drupal instance.</p>
+                        <p>For E2E tests, you'll even need the data from the live database.</p>
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>The problem of acceptance and end-to-end testing</h2>
+                    <p>Solvable by behat, for example</p>
+                    <img class="plain" src="img/add-behat-first.png">
+
+                </section>
+                <section>
+                    <h3>Behat</h3>
+                    <pre><code>@api
+  Scenario: An anonymous should see the hello page
+    Given I am an anonymous user
+    When I go to "hello"
+    Then I should see "Hello world"</code></pre>
+                </section>
+                <section>
+                    <h3>Acceptance and end-to-end tests are expensive</h3>
+                    <ul>
+                        <li>As close to production environment as possible</li>
+                        <li>Database</li>
+                        <li>Files</li>
+                        <li>Search services; caching services etc.</li>
+                    </ul>
+
+                </section>
+                <section>
+                    <h3>The setup is complicated</h3>
+                    <ul>
+                        <li>Behat in the Docker container</li>
+                        <li>Database in the Docker container</li>
+                        <li>Dump the from the staging environment<br>... and import it</li>
+                        <li>Rsync files from the staging environment</li>
+                        <li>What about the search server, redis, mongodb?</li>
+                    </ul>
+                    <p class="fragment">... skip it</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Deploy to staging</h2>
+                    <img class="plain" src="img/ci-flow--cd.png">
+                    <p>Platform.sh solves the problem of staging environments and stakeholder acceptance</p>
+                </section>
+                <section>
+                    <h3>Platform.sh</h3>
+                    <ul>
+                        <li>PaaS</li>
+                        <li>Use git to manage the hosting</li>
+                        <li>An environment per git branch</li>
+                        <li>Branching = cloning the parent environment state (db, services, everything)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>A new staging environment</h3>
+                    <pre><code class="bash">
+$ git push platform my-feature-branch
+$ platform environment:activate
+                    </code></pre>
+                    <pre><code class="bash">
+$ platform push
+                    </code></pre>
+                    <aside class="notes">
+                        <p>Now this can be useful because it can be easily automated!</p>
+                        <p>Platform.sh already has a built-in integration with gitlab, but let's take a harder, yet more flexible way.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Gitlab + Platform.sh</h3>
+                    <ol>
+                        <li>Use the environment variables to store the ssh keys</li>
+                        <li>Setup ssh on docker container build</li>
+                        <li>Push to platform</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Gitlab environment variables</h2>
+                    <img class="plain" src="img/env-vars.png">
+                </section>
+
+                <section>
+                    <h2>SSH setup and push</h2>
+                    <pre><code class="bash">stages:
+  # ...
+  - deploy
+# ...
+psh-deploy:
+  stage: deploy
+  script:
+    - mkdir -p $HOME/.ssh
+    - echo "$SSH_KEY" > $HOME/.ssh/id_rsa
+    - echo "$SSH_KEY_PUB" > $HOME/.ssh/id_rsa.pub
+    - echo "$SSH_KNOWN_HOSTS" > $HOME/.ssh/known_hosts
+    - chmod go-r $HOME/.ssh/id_rsa
+    - platform project:set-remote "$PSH_PROJECT_ID"
+    - platform push --force --activate --target=$CI_BUILD_REF_NAME</code></pre>
+                    <aside class="notes">
+                        <p>NB: This is a simplification. It may be more reasonable to write a shell script that separates the setup from push, handles exceptions, takes care of inheritance.</p>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Continuous delivery!</h3>
+                    <img class="plain" src="img/ci-flow--cd.png">
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Do I <b>really have</b> to run all the tests before the delivery to staging?</h2>
+                    <aside class="notes">
+                        <p>production clones were expensive, but they are cheap with PSH</p>
+                        <p>production clones were slow, but they are being spawn out in a matter of seconds with PSH</p>
+                        <p>running tests in containers is pragmatic with any other hosting provider, but is it really with PSH?</p>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Setting up behat</h3>
+                    <pre><code class="json">// composer.json
+"require": {
+  "drupal/drupal-extension": "^3.4",
+},
+"config": {
+    "bin-dir": "bin/"
+}</code></pre>
+                    <pre><code class="bash">composer update
+mkdir behat
+cd behat
+../bin/behat --init</code></pre>
+                </section>
+                <section>
+                    <h3>Problematic part of setting up behat</h3>
+                    <pre><code class="yaml"># behat/behat.yaml
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      base_url: http://mysite.local
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drush:
+        alias: 'local'
+      drupal:
+        drupal_root: '../web/'
+      region_map:
+        footer: "#footer"
+                    </code></pre>
+                    <p class="s">No way to know <code>default.extensions.Behat\MinkExtension.base_url</code>,<br/> use the environment variable instead!</p>
+                </section>
+
+
+                <section>
+                    <h3>Add a step to the pipeline</h3>
+                    <ul>
+                        <li>Ensure the availability of the ssh key to the platform-cli tool</li>
+                        <li>Get the URL of the platform environment
+                            <pre><code class="bash">platform url --pipe | head -n 1</code></pre>
+                        </li>
+                        <li>create environment variable <code>BEHAT_PARAMS</code> containing the above URL:
+                            <pre><code class="json">{"extensions": {
+    "Behat\\MinkExtension":
+      {"base_url":"[platform-url]"}
+    }
+  }</code></pre></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Complete CI stage</h3>
+                    <pre><code class="yaml">stages:
+  # ...
+  - test-staging
+# ...
+behat:
+  stage: test-staging
+  script: |
+    mkdir -p $HOME/.ssh
+    echo "$SSH_KEY" > $HOME/.ssh/id_rsa
+    echo "$SSH_KEY_PUB" > $HOME/.ssh/id_rsa.pub
+    echo "$SSH_KNOWN_HOSTS" > $HOME/.ssh/known_hosts
+    chmod go-r $HOME/.ssh/id_rsa
+    platform project:set-remote "$PSH_PROJECT_ID"
+    platform variable:create \
+        --name=env:BEHAT_PARAMS \
+        --value="{\"extensions\":{\"Behat\\\\MinkExtension\":{\"base_url\":\"`platform url --environment=$CI_BUILD_REF_NAME --pipe | head -n 1`\"}}}" \
+        --level=environment --json=true \
+        --environment=$CI_BUILD_REF_NAME \
+        --yes || true
+    platform ssh "cd behat; behat" -e $CI_BUILD_REF_NAME</code></pre>
+                </section>
+                <section>
+                    <h3>The revised pipeline</h3>
+                    <img class="plain" src="img/ci-flow--behat.png"><br>
+                    <img class="plain" src="img/complete-pyramid.png">
+                </section>
+            </section>
+
+            <section>
+                <h2>The entire pipeline</h2>
+                <pre><code class="yaml"># .gitlab-ci.yml
+image: bbujisic/drupal8-phpunit:1.2
+stages:
+  - test
+  - deploy
+  - behat
+
+phpcs:
+  stage: test
+  script:
+    - phpcs --standard=Drupal web/modules/custom web/themes/custom
+phpunit:
+  stage: test
+  script:
+    - composer install
+    - phpunit -c phpunit.xml web/modules/custom
+
+# Caveat: gross oversimplification
+psh-deploy:
+  stage: deploy
+  script: |
+    mkdir -p $HOME/.ssh
+    echo "$SSH_KEY" > $HOME/.ssh/id_rsa
+    echo "$SSH_KEY_PUB" > $HOME/.ssh/id_rsa.pub
+    echo "$SSH_KNOWN_HOSTS" > $HOME/.ssh/known_hosts
+    chmod go-r $HOME/.ssh/id_rsa
+    platform project:set-remote "$PSH_PROJECT_ID"
+    platform push \
+        --target=$CI_BUILD_REF_NAME \
+        --force \
+        --activate
+
+behat:
+  stage: behat
+  script: |
+    mkdir -p $HOME/.ssh
+    echo "$SSH_KEY" > $HOME/.ssh/id_rsa
+    echo "$SSH_KEY_PUB" > $HOME/.ssh/id_rsa.pub
+    echo "$SSH_KNOWN_HOSTS" > $HOME/.ssh/known_hosts
+    chmod go-r $HOME/.ssh/id_rsa
+    platform project:set-remote "$PSH_PROJECT_ID"
+    platform variable:create \
+        --name=env:BEHAT_PARAMS \
+        --value="{\"extensions\":{\"Behat\\\\MinkExtension\":{\"base_url\":\"`platform url --environment=$CI_BUILD_REF_NAME --pipe | head -n 1`\"}}}" \
+        --level=environment \
+        --json=true \
+        --environment=$CI_BUILD_REF_NAME \
+        --yes || true
+    platform ssh "cd behat; behat" -e $CI_BUILD_REF_NAME
+
+</code></pre>
+            </section>
+
+            <section>
+                <section>
+                    <h2>What next?</h2>
+                </section>
+                <section>
+                    <h3>Run all tests after the deployment?</h3>
+                    <img class="plain" src="img/alternative-testing.png">
+                    <aside class="notes">
+                        <p>Saves time on composer install</p>
+                        <p>Less resources for gitlab runners needed</p>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Continuous deployment?</h3>
+                    <img class="plain" src="img/cd-steroids.png">
+                    <aside class="notes">
+                        <p>For the adventurous</p>
+                        <p>Even more sense for the enterprise customers</p>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Automated release notes? Slack integration?</h3>
+                    <p>Whatever you want, really!</p>
+                </section>
+            </section>
+            <section>
+                <h2>Thank you</h2>
+                <p>Questions? Comments? Rotten tomatoes?</p>
+                <p class="s">Branislav Bujisic | TW: @bbujisic | branislav@platform.sh</p>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+
+</html>
