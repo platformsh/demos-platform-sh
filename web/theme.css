@@ -209,6 +209,7 @@ body {
     position: relative;
     width: 90%;
     margin: 20px auto;
+    /*padding: 10px;*/
     text-align: left;
     font-size: 0.55em;
     font-family: monospace;
@@ -230,6 +231,7 @@ body {
     overflow: auto;
     max-height: 400px;
     word-wrap: normal;
+    background-color: black;
 }
 
 .reveal table {
@@ -413,8 +415,6 @@ section#final p.button {
 This is for debugging. It lets us see what the available screen real estate is.
 Remove this rule before we actually go to print.
 */
-/*
 .reveal .slides {
-    border: 1px dotted red;
+    /*border: 1px dotted red;*/
 }
-*/

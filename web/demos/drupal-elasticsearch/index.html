@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Use Elasticsearch with Drupal</title>
+
+
+  <meta name="description" content="Demonstrations of Platform.sh capabilities">
+  <meta name="author" content="Platform.sh DevRel team">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SaaS Demo">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Theme definition. The order here matters. -->
+  <link rel="stylesheet" href="../../reveal/css/reveal.css">
+  <link rel="stylesheet" href="../../theme.css" id="theme">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">
+
+  <!-- Asciinema -->
+  <link rel="stylesheet" type="text/css" href="../../asciinema/asciinema-player.css" />
+  <script src="../../asciinema/asciinema-player.js"></script>
+
+  <!-- Custom Platform.sh scripts -->
+  <script src="../../asciinema-start.js"></script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/manifest.json">
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+
+  <style type="text/css">
+    /* Put presentation-specific CSS here. Yes, it will happen. */
+  </style>
+
+</head>
+
+<!-- ontouchstart="" will enable :hover and :active events on tap gesture for PWAs -->
+<body ontouchstart="">
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+
+    <section id="title-slide" data-background-color="#4786ff">
+      <h1>Use Elasticsearch with Drupal</h1>
+    </section>
+
+    <section>
+      <blockquote>Elasticsearch rocks. But can I use it with Drupal?</blockquote>
+      <p>Spoiler alert: Yes</p>
+    </section>
+
+    <section>
+      <p>Platform.sh fully supports both Elasticsearch and Solr</p>
+      <div class="two-col">
+        <div><img src="assets/elasticsearch-logo.svg" alt="Elasticsearch" class="plain" data-credit="https://www.elastic.co/brand" /></div>
+        <div><img src="assets/solr-logo.svg" alt="Apache Solr" class="plain" data-credit="https://freebiesupply.com/logos/solr-logo/" /></div>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <p>Add three lines to <code>services.yaml</code></p>
+        <pre><code class="yaml" data-trim>
+elasticsearch:
+    type: elasticsearch:6.5
+    disk: 512
+        </code></pre>
+      </div>
+      <div style="margin-top: 2em;">
+        <p>Add one line to <code>.platform.app.yaml</code></p>
+        <pre><code class="yaml" data-trim>
+relationships:
+    elasticsearch: 'elasticsearch:elasticsearch'
+        </code></pre>
+      </div>
+    </section>
+
+    <section>
+      <p>Install Drupal modules</p>
+      <pre><code>composer require drupal/elasticsearch_connector drupal/search_api</code></pre>
+    </section>
+
+    <section>
+      <p>Configure a Cluster in Drupal</p>
+      <p><img src="assets/01-elasticsearch-cluster.png" width="100%" alt="Create a cluster and note the machine name"></p>
+      <p>Note the machine name you give it</p>
+    </section>
+
+    <section>
+      <p>Drop some glue code into <code>settings.php</code></p>
+      <pre><code class="php" data-trim>
+// Update these values to the relationship name (from .platform.app.yaml)
+// and the machine name of the server from your Drupal configuration.
+$relationship_name = 'elasticsearch';
+$es_server_name = 'my_cluster';
+if ($platformsh->hasRelationship($relationship_name)) {
+  $platformsh->registerFormatter('drupal-elastic', function($creds) {
+    return sprintf('http://%s:%s', $creds['host'], $creds['port']);
+  });
+
+  $config['elasticsearch_connector.cluster.' . $es_server_name]['url'] =
+        $platformsh->formattedCredentials($relationship_name, 'drupal-elastic');
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <img src="assets/02-search-api.png" width="100%" alt="Now configure your Elasticsearch instance in Search API like normal.  That's all there is to it.">
+    </section>
+
+    <section id="final" data-background="../../images/launch-background.png">
+      <div class="two-col">
+        <a href="/">
+          <div><img src="../../images/platform-logo-1c-black.svg" alt="That's Platform.sh" class="plain" /></div>
+          <p class="button">View all topics</p>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+</div>
+
+<script src="../../reveal/lib/js/head.min.js"></script>
+<script src="../../reveal/js/reveal.js"></script>
+
+<script>
+
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    width: 1194,
+    height: 671,
+    controls: true,
+    progress: false,
+    history: true,
+    center: true,
+    controlsTutorial: false,
+    touch: true,
+    overview: false,
+    help: false,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: '../../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../../reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../../reveal/plugin/search/search.js', async: true },
+      { src: '../../reveal/plugin/zoom-js/zoom.js', async: true },
+      { src: '../../reveal/plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
+</html>
