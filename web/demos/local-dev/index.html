@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Flexible options for development</title>
+
+
+  <meta name="description" content="Demonstrations of Platform.sh capabilities">
+  <meta name="author" content="Platform.sh DevRel team">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SaaS Demo">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Theme definition. The order here matters. -->
+  <link rel="stylesheet" href="../../reveal/css/reveal.css">
+  <link rel="stylesheet" href="../../theme.css" id="theme">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">
+
+  <!-- Asciinema -->
+  <link rel="stylesheet" type="text/css" href="../../asciinema/asciinema-player.css" />
+  <script src="../../asciinema/asciinema-player.js"></script>
+
+  <!-- Custom Platform.sh scripts -->
+  <script src="../../asciinema-start.js"></script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/manifest.json">
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+
+  <style type="text/css">
+    /* Put presentation-specific CSS here. Yes, it will happen. */
+  </style>
+
+</head>
+
+<!-- ontouchstart="" will enable :hover and :active events on tap gesture for PWAs -->
+<body ontouchstart="">
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+
+    <section id="title-slide" data-background-color="#4786ff">
+      <h1>Flexible options for development</h1>
+    </section>
+
+    <section>
+      <blockquote>I want to start developing fast,<br/>but not be my own sysadmin.</blockquote>
+    </section>
+
+    <section>
+      <p>Use any local environment, but access your services live.</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/01-tunnel.cast"></asciinema-player>
+      <p>Open a tunnel; now any application can connect to it "locally".</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/02-connect.cast"></asciinema-player>
+      <p>Set a local `PORT` if necessary, and your app can connect.</p>
+      <p>It runs locally, but uses the remote services. Any of them.</p>
+    </section>
+
+    <section>
+      <img src="assets/03-browser.png" alt="Browser showing localhost and serving a site" style="width: 80%;" class="screenshot">
+      <p>Work locally as needed, with your hosted services.</p>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/04-close.cast"></asciinema-player>
+      <p>Clean up when you're done.</p>
+    </section>
+
+    <section id="final" data-background="../../images/launch-background.png">
+      <div class="two-col">
+        <a href="/">
+          <div><img src="../../images/platform-logo-1c-black.svg" alt="That's Platform.sh" class="plain" /></div>
+          <p class="button">View all topics</p>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+</div>
+
+<script src="../../reveal/lib/js/head.min.js"></script>
+<script src="../../reveal/js/reveal.js"></script>
+
+<script>
+
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    width: 1194,
+    height: 671,
+    controls: true,
+    progress: false,
+    history: true,
+    center: true,
+    controlsTutorial: false,
+    touch: true,
+    overview: false,
+    help: false,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: '../../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../../reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../../reveal/plugin/search/search.js', async: true },
+      { src: '../../reveal/plugin/zoom-js/zoom.js', async: true },
+      { src: '../../reveal/plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
+</html>
