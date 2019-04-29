@@ -405,4 +405,4 @@
 [23.850000, "o", "\r\u001b[2K  [->--------------------------] 6 mins (complete)\r\u001b[2K\r\n\u001b[1A    Environment configuration\r\n        app (type: python:3.7, size: S, disk: 5120)\r\n    \r\n      Environment routes\r\n        http://miniconda-qhewo4y-jrysuy5kvs6fy.eu-3.platformsh.site/ redirects to https://miniconda-qhewo4y-jrysuy5kvs6fy.eu-3.platformsh.site/\r\n        https://miniconda-qhewo4y-jrysuy5kvs6fy.eu-3.platformsh.site/ is served by application `app`\r\n"]
 [23.900000, "o", "\r\u001b[2K  [-->-------------------------] 6 mins (complete)\r\u001b[2K  [============================] 6 mins (complete)\r\nActivity \u001b[32mqydeu64iemck4\u001b[39m succeeded\r\n"]
 [23.950000, "o", "\u001b[30;1m-\u001b[0m \u001b[36mlaptop\u001b[0m · \u001b[32m~/anaconda-project\u001b[0m $ "]
-[24.000000, "o", "exit\r\n"]
+[24.000000, "o", "\r\n"]
