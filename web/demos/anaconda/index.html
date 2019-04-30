@@ -76,6 +76,56 @@
       font-size: 0.95em;
     }
 
+    ul.other-stacks {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 0;
+    }
+
+    ul.other-stacks > li {
+      margin-left: 20px;
+      margin-right: 20px;
+      min-width: 40%;
+      text-align: center;
+    }
+
+    ul.other-stacks > li > img {
+      max-width: 318px;
+      max-height: 150px;
+    }
+
+    #stackless-label {
+      font-size: 2em;
+      padding: 0.33em;
+      border: 3px solid black;
+      margin: auto;
+      max-width: 10ex;
+    }
+
+    #stackless-label > .subtext {
+      position: relative;
+      font-size: 1.5rem;
+      text-align: right;
+      margin: 0;
+      width: 100%;
+      /* line-height: 1rem; */
+    }
+
+    #stackless-label > .maintext {
+      position: relative;
+      line-height: 0.8;
+      margin: 0;
+      width: 100%;
+      background-color: none;
+    }
+
+    .maintext > code {
+      background: none;
+    }
+
   </style>
 
 </head>
@@ -142,12 +192,16 @@
 
     <section>
       <asciinema-player src="assets/1-install.cast"></asciinema-player>
-      <p>All of the packages in Anaconda get baked into your application.</p>
+      <p>All of Anaconda's packages get baked into your app container.</p>
     </section>
 
     <section>
-      <p>Services are exposed only to your application, not the web.</p>
-      <p>That makes everything secure by default.</p>
+      <ul class="other-stacks">
+        <li><img src="assets/languages/r-logo.svg" alt="R Language" class="plain" data-credit="https://commons.wikimedia.org/wiki/File:R_logo.svg" /></li>
+        <li><img src="assets/languages/pypy-logo.png" alt="PyPy" class="plain" data-credit="https://commons.wikimedia.org/wiki/File:Pypy_logo.png" /></li>
+        <li><div id="stackless-label"><div class="maintext"><code>Stackless</code></div><div class="subtext">Python</div></div></li>
+      </ul>
+      <p style="margin-top: 0;">Anaconda isn't the only possibility! Any stack that can be installed with Conda—like R, PyPy, and Stackless Python—can be used!</p>
     </section>
 
     <section id="final" data-background="../../images/launch-background.png">
@@ -158,32 +212,6 @@
         </a>
       </div>
     </section>
-
-    <div style="display:none">
-    Problem: Is my application compatible with the new PHP 7.3?
-    Script
-      Show a project in the UI.
-      Overlay: Changing host language versions is trivial.
-      Push button for new branch.
-      Check out branch locally.
-      Change one character in .platform.app.yaml.
-      Push, watch build.
-      Show site.
-      Overlay: Do whatever testing you need, automated or manual.  Production hasn't been touched.
-      Go to UI.
-      Click Merge.
-      Overlay: You know it works, because you've tested it. Deploy the exact same application image in seconds!
-      [Note: This same script can be used for any language.]
-    Shows
-      Quickly upgrade services
-      Automatically resolve dependencies
-      Build code on Git push
-      Testing
-      YAML based configuration
-      Freedom to make mistakes
-      Reproducible environments
-
-    </div>
 
   </div>
 
