@@ -159,8 +159,8 @@
       <pre><code class="yaml" data-trim>
           #!/bin/bash
 
-          # Download an Anaconda3 release and name the file `conda.sh`
-          curl https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh -o conda.sh
+          # Download the latest Miniconda3 release and name the file `conda.sh`
+          curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o conda.sh
 
           # Run the conda installer
           bash conda.sh -b -p $PLATFORM_APP_DIR/conda
@@ -168,8 +168,9 @@
           # Put the `conda` command in the path
           . /app/conda/etc/profile.d/conda.sh
 
-          # Activate the conda environment
+          # Activate the conda environment and install the full Anaconda environment
           conda activate base
+          conda install anaconda
         </code></pre>
       </div>
       <p style="margin-top: 0;">Simply include a bash script that configures the Conda environment in the <code>.platform.app.yaml</code> build hook.</p>
