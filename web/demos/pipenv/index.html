@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Scaling on demand</title>
+  <title>Managing dependencies with Pipenv</title>
 
 
   <meta name="description" content="Demonstrations of Platform.sh capabilities">
@@ -61,40 +61,53 @@
   <div class="slides">
 
     <section id="title-slide" data-background-color="#4786ff">
-      <h1>Scaling on demand</h1>
+      <h1>Managing dependencies with Pipenv</h1>
     </section>
 
     <section>
-      <blockquote>We have a big sale tomorrow.<br />Traffic is going to skyrocket!</blockquote>
+      <blockquote>I want my local builds to be deterministic, just like my deployments!</blockquote>
     </section>
 
     <section>
-      <img src="assets/1-user-menu.png" alt="Go to the user menu in the top right of the screen." class="screenshot" />
-      <p>That's easy. Just go to your user page...</p>
-    </section>
-    <section>
-      <img src="assets/2-select-project.png" alt="Select your project and click Edit." class="screenshot" />
-      <p>... Edit the project</p>
-    </section>
-    <section>
-      <img src="assets/3-set-plan.png" alt="Pick your plan size." class="screenshot" />
-      <p>... And pick a new plan size. Scale as high as you need.</p>
-    </section>
-    <section>
-      <img src="assets/4-redeploy.png" height="425px" alt="When you save, the site redeploys automatically at the new size." class="screenshot" />
-      <p>The site will redeploy in seconds.</p>
-      <p>5x the memory and CPU are now yours!</p>
-    </section>
-    <section>
-      <img src="assets/5-set-plan-down.png" alt="Scale back down at any time." class="screenshot" />
-      <p>You can scale back down to any plan size anytime.</p>
-      <p>Plans are prorated. Pay for only the time you use!</p>
+        <div style="display: flex;">
+          <div style="flex: 3; margin-left: -10vw;">
+            <img src="https://platform.sh/images/product/product-deploy-friday@2x.png" class="plain" style=""/>
+          </div>
+          <div style="flex: 5; text-align: left;">
+            <h4 style="display: inline-block; background-color: #FFBDBB; padding: 0.25ex;">With Platform.sh...</h4>
+            <h2>Your deployments are deterministic:</h2>
+            <ul>
+              <li>Dev environments have a byte-for-byte copy of production data.</li>
+              <li>Merging your dev branch into your master packages up your fully-tested build for deployment.</li>
+            </p>
+          </div>
+        </div>
     </section>
 
     <section>
-      <asciinema-player src="assets/6-cli-scale.cast"></asciinema-player>
-      <p>You can scale from the command line, too.</p>
-      <p>Including from your own scripts.</p>
+      <h3>But how do you keep dependencies consistent between local builds and remote builds?</h3>
+    </section>
+
+    <section>
+      <h3>Pipenv to the rescue!</h3>
+      <div class="two-col">
+        <div>
+          <img src="assets/python-logo.svg" alt="Python" class="plain" width="75%" data-credit="https://commons.wikimedia.org/wiki/File:Python.svg" />
+        </div>
+        <div><img src="assets/pipenv-logo.png" class="plain" width="75%" alt="Pipenv" /></div>
+      </div>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/01-update.cast"></asciinema-player>
+      <p>Platform.sh supports Composer-builds natively.</p>
+      <p><code>composer update</code>, push to a branch, profit!</p>
+    </section>
+
+    <section>
+      <img src="assets/2-merge-branch.png" alt="Merge the branch through the UI." />
+      <p style="margin-top: 2em;">Test the branch, then hit Merge.</p>
+      <p>Deploy the exact same application image to prod in seconds.</p>
     </section>
 
     <section id="final" data-background="../../images/launch-background.png">
@@ -108,24 +121,6 @@
         <div></div>
       </div>
     </section>
-
-    <div style="display:none">
-      Problem: "Woah, we have a big news announcement tomorrow.  Will the site handle it?"
-      Script
-        Show UI.
-        Go to Accounts, select project config.
-        Change size from Standard to Large, hit save.
-        *site redeploys*
-        Overlay: "Five times as much CPU and RAM, at the click of a button."
-        Overlay: "Well, our traffic is back down now that the news has passed."
-        Change site from Large to Medium, hit save. (Because there's still some residual extra traffic.)
-        *site redeploys*
-      Shows
-        Easy scaling
-        Scale for events
-        Cost control
-
-    </div>
 
   </div>
 
