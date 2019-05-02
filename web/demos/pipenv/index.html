@@ -69,17 +69,32 @@
     </section>
 
     <section>
-      <div class="two-col">
-        <div><img src="https://platform.sh/images/product/product-deploy-friday@2x.png" class="plain" style="width: 1000px; align-items: right; margin-left: auto;"/></div>
-        <div><p>With Platform.sh, your deployments are deterministic: your development environments have a byte-for-byte copy of your production data and merging your development branch into Master packages up your fully-tested development build.</p></div>
-      </div>
+        <div style="display: flex;">
+          <div style="flex: 3; margin-left: -10vw;">
+            <img src="https://platform.sh/images/product/product-deploy-friday@2x.png" class="plain" style=""/>
+          </div>
+          <div style="flex: 5; text-align: left;">
+            <h4 style="display: inline-block; background-color: #FFBDBB; padding: 0.25ex;">With Platform.sh...</h4>
+            <h2>Your deployments are deterministic:</h2>
+            <ul>
+              <li>Dev environments have a byte-for-byte copy of production data.</li>
+              <li>Merging your dev branch into your master packages up your fully-tested build for deployment.</li>
+            </p>
+          </div>
+        </div>
     </section>
 
     <section>
-      <p>Composer to the rescue</p>
+      <h3>But how do you keep dependencies consistent between local builds and remote builds?</h3>
+    </section>
+
+    <section>
+      <h3>Pipenv to the rescue!</h3>
       <div class="two-col">
-        <div><img src="assets/druplicon.svg" class="plain" width="400px" alt="Drupal" /></div>
-        <div><img src="assets/composer-logo.png" class="plain" width="400px" alt="Composer" /></div>
+        <div>
+          <img src="assets/python-logo.svg" alt="Python" class="plain" width="75%" data-credit="https://commons.wikimedia.org/wiki/File:Python.svg" />
+        </div>
+        <div><img src="assets/pipenv-logo.png" class="plain" width="75%" alt="Pipenv" /></div>
       </div>
     </section>
 
