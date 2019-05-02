@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Managing dependencies with Pipenv</title>
+
+
+  <meta name="description" content="Demonstrations of Platform.sh capabilities">
+  <meta name="author" content="Platform.sh DevRel team">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SaaS Demo">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Theme definition. The order here matters. -->
+  <link rel="stylesheet" href="../../reveal/css/reveal.css">
+  <link rel="stylesheet" href="../../theme.css" id="theme">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../../reveal/lib/css/zenburn.css">
+
+  <!-- Asciinema -->
+  <link rel="stylesheet" type="text/css" href="../../asciinema/asciinema-player.css" />
+  <script src="../../asciinema/asciinema-player.js"></script>
+
+  <!-- Custom Platform.sh scripts -->
+  <script src="../../asciinema-start.js"></script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/manifest.json">
+  <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+
+  <style type="text/css">
+    /* Put presentation-specific CSS here. Yes, it will happen. */
+  </style>
+
+</head>
+
+<!-- ontouchstart="" will enable :hover and :active events on tap gesture for PWAs -->
+<body ontouchstart="">
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+
+    <section id="title-slide" data-background-color="#4786ff">
+      <h1>Managing dependencies with Pipenv</h1>
+    </section>
+
+    <section>
+      <blockquote>I want my local builds to be deterministic, just like my deployments!</blockquote>
+    </section>
+
+    <section>
+      <div class="two-col">
+        <div><img src="https://platform.sh/images/product/product-deploy-friday@2x.png" class="plain" style="width: 1000px; align-items: right; margin-left: auto;"/></div>
+        <div><p>With Platform.sh, your deployments are deterministic: your development environments have a byte-for-byte copy of your production data and merging your development branch into Master packages up your fully-tested development build.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <p>Composer to the rescue</p>
+      <div class="two-col">
+        <div><img src="assets/druplicon.svg" class="plain" width="400px" alt="Drupal" /></div>
+        <div><img src="assets/composer-logo.png" class="plain" width="400px" alt="Composer" /></div>
+      </div>
+    </section>
+
+    <section>
+      <asciinema-player src="assets/01-update.cast"></asciinema-player>
+      <p>Platform.sh supports Composer-builds natively.</p>
+      <p><code>composer update</code>, push to a branch, profit!</p>
+    </section>
+
+    <section>
+      <img src="assets/2-merge-branch.png" alt="Merge the branch through the UI." />
+      <p style="margin-top: 2em;">Test the branch, then hit Merge.</p>
+      <p>Deploy the exact same application image to prod in seconds.</p>
+    </section>
+
+    <section id="final" data-background="../../images/launch-background.png">
+      <div class="two-col">
+        <div>
+          <a href="/">
+            <div><img src="../../images/platform-logo-1c-black.svg" alt="That's Platform.sh" class="plain" /></div>
+            <p class="button">View all topics</p>
+          </a>
+        </div>
+        <div></div>
+      </div>
+    </section>
+
+  </div>
+
+</div>
+
+<script src="../../reveal/lib/js/head.min.js"></script>
+<script src="../../reveal/js/reveal.js"></script>
+
+<script>
+
+  // More info https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    width: 1194,
+    height: 671,
+    controls: true,
+    progress: false,
+    history: true,
+    center: true,
+    controlsTutorial: false,
+    touch: true,
+    overview: false,
+    help: false,
+
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+    dependencies: [
+      { src: '../../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../../reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../../reveal/plugin/search/search.js', async: true },
+      { src: '../../reveal/plugin/zoom-js/zoom.js', async: true },
+      { src: '../../reveal/plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+
+</body>
+</html>
