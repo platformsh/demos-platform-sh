@@ -410,6 +410,14 @@ we do not always want. The problem does not appear in Firefox.
  * This is a bit gunky but works, amazingly.
  *********************************************/
 
+/* Override the two colum approach for the closing slide. */
+/* Using two-col here is a bit of a hack, but it gets the job done. */
+section#final > div.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
 section#final > div.two-col a {
     padding: 0 100px;
 }
