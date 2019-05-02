@@ -377,6 +377,22 @@ body {
     align-items: center;
 }
 
+/* This is a workaround for Chrome. For unknown reasons in Chrome a grid
+that has nothing but SVG images in it will display with a height of zero.
+The flexbox approach below does not, but forces equal-width columns that
+we do not always want. The problem does not appear in Firefox.
+ */
+.two-col-svg {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.two-col-svg > div {
+    flex: 1;
+}
+
 .two-col.top-align {
     align-items: start;
 }
