@@ -372,9 +372,14 @@ body {
  *********************************************/
 
 .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
     align-items: center;
+}
+
+.two-col > div {
+    flex: 1;
 }
 
 .two-col.top-align {
