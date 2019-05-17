@@ -140,10 +140,16 @@
 
     <section id="title-slide" data-background-color="#4786ff">
       <h1>Running Anaconda environments</h1>
+      <aside class="notes">
+        Anaconda is the World’s Most Popular Python Data Science Distribution.
+      </aside>
     </section>
 
     <section>
       <blockquote>My applications require the full Anaconda data science stack!</blockquote>
+      <aside class="notes">
+        This demo shows how to install the full Anaconda data science stack on Platform.sh.
+      </aside>
     </section>
 
     <section>
@@ -152,6 +158,12 @@
         <li><img src="assets/languages/conda-logo.svg" alt="Conda" class="plain" data-credit="https://www.anaconda.com/media-kit/" style="padding-bottom:15px;" /></li>
       </ul>
       <p style="margin-top: 0;">Installers for Conda-based environments like Anaconda and Miniconda work on Platform.sh!</p>
+      <aside class="notes">
+        Conda is an open source package and environment management system.
+        It was created for Python programs, but it can package and distribute software for any language.
+        Conda is included in all versions of Anaconda, as well as Miniconda, which essentially Anaconda
+        without the packages included.
+      </aside>
     </section>
 
     <section>
@@ -174,6 +186,11 @@
         </code></pre>
       </div>
       <p style="margin-top: 0;">Simply include a bash script that configures the Conda environment in the <code>.platform.app.yaml</code> build hook.</p>
+      <aside  class="notes">
+        The build hook in your .platform.app.yaml file lets you specify scripts to run when your code builds.
+        This script uses curl to get Miniconda. It then runs the conda installer, adds conda to the path,
+        and then install the full Anaconda environment.
+      </aside>
     </section>
 
     <section>
@@ -189,11 +206,20 @@
         </code></pre>
       </div>
       <p style="margin-top: 0;">Then, just activate the conda environment before you run your web app in your `start` command!</p>
+      <aside class="notes">
+        In the web section of .platform.app.yaml you then specify a start command which runs this script.
+        The example shown activates the conda environment and starts the jupyter notebook, a popular interactive
+        tool for creating rich documents and running code.
+      </aside>
     </section>
 
     <section>
       <asciinema-player src="assets/1-install.cast"></asciinema-player>
       <p>All of Anaconda's packages get baked into your app container.</p>
+      <aside class="notes">
+        When Platform.sh builds your code and manages dependencies, all of the required packages are written on a
+        read-only disk image that is available to your application container.
+      </aside>
     </section>
 
     <section>
@@ -203,6 +229,10 @@
         <li><div id="stackless-label"><div class="maintext"><code>Stackless</code></div><div class="subtext">Python</div></div></li>
       </ul>
       <p style="margin-top: 0;">Anaconda isn't the only possibility! Any stack that can be installed with Conda—like R, PyPy, and Stackless Python—can be used!</p>
+      <aside class="notes">
+        R, PyPy, and Stackless Python are examples of other runtimes or tools that can be installed on Platform.sh by
+        first installing Miniconda and then using it to install further packages.
+      </aside>
     </section>
 
     <section id="final" data-background="../../images/launch-background.png">
