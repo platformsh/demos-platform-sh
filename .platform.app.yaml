@@ -30,9 +30,10 @@ hooks:
         set -e
 
 crons:
-    snapshot:
-        spec: '0 2 * * 0'
+    renewcert:
+        # Force a redeploy at 10 am (UTC) on the 1st and 15th of every month.
+        spec: '0 10 1,15 * *'
         cmd: |
             if [ "$PLATFORM_BRANCH" = master ]; then
-                platform snapshot:create --yes --no-wait
+                platform redeploy --yes --no-wait
             fi
