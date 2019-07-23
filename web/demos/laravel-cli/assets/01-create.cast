@@ -20,8 +20,6 @@
 [13.264676, "o", "\u001b[30;47m2.platform.sh\u001b[39;49m\u001b8"]
 [14.008191, "o", "2.platform.sh"]
 [14.984093, "o", "\r\n"]
-[14.991218, "o", "stty: 'standard input': unable to perform all requested operations\r\n"]
-[14.991463, "o", "\r\n"]
 [15.303462, "o", "\u001b[32mPlan\u001b[39m (--plan)\r\nThe subscription plan\r\nDefault: \u001b[30;46mdevelopment\u001b[39;49m\r\n  [\u001b[32mdevelopment       \u001b[39m] Development ($10)\r\n  [\u001b[32mstandard          \u001b[39m] Standard ($50)\r\n  [\u001b[32mmedium            \u001b[39m] Medium ($135)\r\n"]
 [15.303715, "o", "  [\u001b[32mlarge             \u001b[39m] Large ($270)\r\n  [\u001b[32mxlarge            \u001b[39m] X-Large ($540)\r\n  [\u001b[32m2xlarge           \u001b[39m] 2X-Large ($1080)\r\n"]
 [18.560964, "o", "d\u001b[K\u001b7"]
