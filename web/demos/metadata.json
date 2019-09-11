@@ -4,31 +4,7 @@
             "demoSlug": "platform-overview",
             "gridTitle": "Platform.sh Overview",
             "fullTitle": "",
-            "imageSlug": "connected"
-        },
-        {
-            "demoSlug": "laravel-cli",
-            "gridTitle": "Laravel with the CLI",
-            "fullTitle": "",
-            "imageSlug": "tools"
-        },
-        {
-            "demoSlug": "real-services",
-            "gridTitle": "Real production services",
-            "fullTitle": "",
-            "imageSlug": "routing"
-        },
-        {
-            "demoSlug": "fast-scale",
-            "gridTitle": "Scale quickly on-demand",
-            "fullTitle": "",
-            "imageSlug": "speed"
-        },
-        {
-            "demoSlug": "upgrades",
-            "gridTitle": "Easy version upgrades",
-            "fullTitle": "",
-            "imageSlug": "infrastructure"
+            "imageSlug": "containers"
         },
         {
             "demoSlug": "dev-prod",
@@ -37,16 +13,46 @@
             "imageSlug": "environments"
         },
         {
+            "demoSlug": "real-services",
+            "gridTitle": "Real production services",
+            "fullTitle": "",
+            "imageSlug": "routing"
+        },
+        {
             "demoSlug": "newtech",
             "gridTitle": "Trying New Technologies",
             "fullTitle": "Try new technologies and architectures",
+            "imageSlug": "time"
+        },
+        {
+            "demoSlug": "drupal-update",
+            "gridTitle": "Updating Drupal with Composer",
+            "fullTitle": "",
+            "imageSlug": "tools"
+        },
+        {
+            "demoSlug": "drupal-elasticsearch",
+            "gridTitle": "Use Elasticsearch with Drupal",
+            "fullTitle": "",
+            "imageSlug": "connected"
+        },
+        {
+            "demoSlug": "drupal-cli",
+            "gridTitle": "Install Drupal with the CLI",
+            "fullTitle": "",
+            "imageSlug": "speed"
+        },
+        {
+            "demoSlug": "source-ops",
+            "gridTitle": "Source Operations",
+            "fullTitle": "Composer updates with Source Operations",
             "imageSlug": "automated"
         },
         {
-            "demoSlug": "scrum",
-            "gridTitle": "Scrum Management",
+            "demoSlug": "drupal-multisite",
+            "gridTitle": "Drupal Multi-site",
             "fullTitle": "",
-            "imageSlug": "time"
+            "imageSlug": "infrastructure"
         },
         {
             "demoSlug": "github",
@@ -59,12 +65,6 @@
             "gridTitle": "Running SaaS",
             "fullTitle": "Run your SaaS on Platform.sh",
             "imageSlug": "gears"
-        },
-        {
-            "demoSlug": "team-scale",
-            "gridTitle": "Onboarding Team Members Easily",
-            "fullTitle": "",
-            "imageSlug": "users"
         },
         {
             "demoSlug": "security",
