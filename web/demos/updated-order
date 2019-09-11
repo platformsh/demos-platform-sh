@@ -1,0 +1,32 @@
+ROW1:
+
+Platform.sh Overview - keep
+    - connected
+Laravel with the CLI - lose
+    - tools
+Real production services - keep
+    - routing
+Scale quickly on-demand - maybe
+    - speed
+
+ROW 2:
+
+Easy version upgrades - yes
+    - infrastructure
+Development Environments - maybe
+    - environments
+Trying New Technologies - yes
+    - automated
+Scrum Management - probably
+    - time
+
+ROW 3:
+
+Git Integrations - yes
+    - git
+Running SaaS - may not be relevant
+    - gears
+Onboarding Team Members Easily - maybe not relevant
+    - users
+Security by Design
+    - security
