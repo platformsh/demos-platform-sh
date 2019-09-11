@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Composer Updates with Source Operations</title>
+  <title>Drupal 8 Multi-site</title>
 
 
   <meta name="description" content="Demonstrations of Platform.sh capabilities">
@@ -61,31 +61,56 @@
   <div class="slides">
 
     <section id="title-slide" data-background-color="#4786ff">
-      <h1>Composer Updates with</br>Source Operations</h1>
+      <h1>Drupal 8 Multi-site on Platform.sh</h1>
     </section>
 
     <section>
-      <blockquote>There's a new security release of a Drupal module. I need to update fast!</blockquote>
+      <blockquote>What about Drupal multi-site?</blockquote>
     </section>
 
     <section>
-      <p>Composer to the rescue</p>
-      <div class="two-col-svg">
-        <div><img src="assets/druplicon.svg" class="plain" width="400px" alt="Drupal" /></div>
-        <div><img src="assets/composer-logo.png" class="plain" width="400px" alt="Composer" /></div>
-      </div>
+    <div class="two-col-svg">
+      <div>Setting up a Drupal 8 multi-site app with subdomains takes just a few modifications from our existing template.</div>
+      <div><img src="assets/druplicon.svg" class="plain" width="400px" alt="Composer" /></div>
+    </div>
     </section>
 
     <section>
-      <asciinema-player src="assets/01-add-sourceops.cast"></asciinema-player>
-      <p>Platform.sh supports Composer-builds natively.</p>
-      <p><code>composer update</code>, push to a branch, profit!</p>
+      <img src="assets/01-routes.png" alt="Multi-site routes." width="75%"/>
+      <p style="margin-top: 2em;">Each site gets a unique subsite ID</p>
+      <p>that is used to define a its subdomain in <code>routes.yaml,</code></p>
     </section>
 
     <section>
-      <img src="assets/2-merge-branch.png" alt="Merge the branch through the UI." />
-      <p style="margin-top: 2em;">Test the branch, then hit Merge.</p>
-      <p>Deploy the exact same application image to prod in seconds.</p>
+      <img src="assets/02-settings.png" alt="Multi-site settings directories." />
+      <p style="margin-top: 2em;">their own <code>config/sync</code> directory as well as settings directories</p>
+      <p> in <code>sites</code>, which are identical to <code>default</code> to start,</p>
+      <p>but could be customized for each site.</p>
+    </section>
+
+    <section>
+      <img src="assets/03-relationships.png" alt="Subsite relationships." />
+      <p style="margin-top: 2em;">Each subsite has its own database</p>
+      <p>and endpoint, so they get their own relationships</p>
+      <p>in <code>.platform.app.yaml</code>.</p>
+    </section>
+
+    <section>
+      <img src="assets/04-services.png" alt="Database definitions." width="60%"/>
+      <p style="margin-top: 2em;">Each subsite's database is defined for the same</p>
+      <p>MariaDB instance in the <code>services.yaml</code> file.</p>
+    </section>
+
+    <section>
+      <video width="80%" data-autoplay muted playsinline>
+        <source src="assets/05-urls.mp4" type="video/mp4">
+      </video>
+      <p>To give you a separate Drupal 8 installation at each subdomain.</p>
+    </section>
+
+    <section>
+      <img src="assets/06-repo.png" alt="GitHub template repo." width="80%"/>
+      <p style="margin-top: 2em;">Check out the multi-site template for all the details!</p>
     </section>
 
     <section id="final" data-background="../../images/launch-background.png">
