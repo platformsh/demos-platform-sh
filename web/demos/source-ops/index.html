@@ -65,7 +65,7 @@
     </section>
 
     <section>
-      <blockquote>I need my projects to update dependencies and security fixes regularly!</blockquote>
+      <blockquote>I need scheduled updates for my Drupal apps!</blockquote>
     </section>
 
     <section>
@@ -78,7 +78,7 @@
 
     <section>
       <img src="assets/01-source-op-defn.png" alt="Source operations definition." />
-      <p>Add the update commands under the <code>update</code> key.</p>
+      <p>Define the new source operation <code>update</code>.</p>
       <p>Commit the <code>.platform.app.yaml</code> changes,</p>
       <p>and push to your <code>sourceops</code> branch.</p>
     </section>
@@ -91,12 +91,11 @@
     </section>
 
     <section>
-      <video width="75%" data-autoplay muted playsinline>
-        <source src="assets/07-console-sourceops.mp4" type="video/mp4">
+      <video width="60%" data-autoplay muted playsinline>
+        <source src="assets/03-console-sourceops.mp4" type="video/mp4">
       </video>
       <p>The command will launch for the environment,</p>
-      <p>then push the commit to the repository, and</p>
-      <p>trigger the normal build process.</p>
+      <p>push the commit, and trigger the normal build process.</p>
     </section>
 
     <section>
@@ -108,16 +107,22 @@
 
     <section>
       <img src="assets/05-cron.png" alt="Source operations cron." />
-      <p>Then define a cron job to run the <code>update</code> source operation.</p>
-      <p>It's restricted to an <code>update-dependencies</code> environment,</p>
-      <p>synching from Master before the operation is triggered.</p>
+      <p>Then define a cron job to run the <code>update</code> source operation,</p>
+      <p>restricting it to a dedicated <code>update-dependencies</code> environment</p>
+      <p>which syncs from Master before the operation is triggered.</p>
     </section>
 
     <section>
       <img src="assets/06-merge-branch.png" alt="Merge the branch through the UI." />
       <p style="margin-top: 2em;">You can then merge the changes into Master,</p>
-      <p>and create a dedicated <code>update-dependencies</code> environment</p>
-      <p>that will run the <code>update</code> command each day.</p>
+      <p>and then Branch to create the <code>update-dependencies</code></p>
+      <p>environment that will run the <code>update</code> operation each day.</p>
+    </section>
+
+    <section>
+      <img src="assets/07-environments.png" alt="Dedicated environment." width="75%"/>
+      <p style="margin-top: 2em;">With the <code>update-dependencies</code> environment in place,</p>
+      <p>you can test the updates and merge into production.</p>
     </section>
 
     <section id="final" data-background="../../images/launch-background.png">
