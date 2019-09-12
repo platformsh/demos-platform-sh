@@ -37,7 +37,7 @@
             "imageSlug": "connected"
         },
         {
-            "demoSlug": "drupal-cli",
+            "demoSlug": "drupal-install-cli",
             "gridTitle": "Install Drupal with the CLI",
             "fullTitle": "",
             "imageSlug": "speed"
